@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.tvac.akshayejh.firebasesearch.activity_profile">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="241dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Update_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay1"
+        app:layout_constraintVertical_bias="0.923"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/rellay1"
+        android:layout_width="410dp"
+        android:layout_height="267dp"
+        android:background="@drawable/grad"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/circle_border"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="117dp"
+                android:layout_height="112dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ic_account_circle_black_24dp"
+                android:padding="3dp"
+                android:scaleType="centerInside" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/NameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#0F0E0F"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgUser"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/photo_btn"
+            android:layout_width="138dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="16dp"
+            android:text="Select photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgUser" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/namelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Name"
+        android:textColor="#0F0E0F"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/contact_btn"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="188dp"
+        android:onClick="Contact"
+        android:text="Contact us"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Update_btn"
+        android:layout_width="235dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="44dp"
+        android:onClick="UpdateInfo"
+        android:text="Update info"
+        app:layout_constraintBottom_toTopOf="@+id/SaveRecBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/SaveRecBtn"
+        android:layout_width="237dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="SRecipe"
+        android:text="Recipe history"
+        app:layout_constraintBottom_toTopOf="@+id/contact_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/INS"
+        android:layout_width="235dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="120dp"
+        android:text="Helpful cooking tutorials"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
