@@ -142,24 +142,9 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
-                        <option name="children">
-                          <map>
-                            <entry key="clipartAsset">
-                              <value>
-                                <PersistentState>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="url" value="jar:file:/F:/Downloads/Android%20Studio/Installation/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_send_black_24dp.xml" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_send_black_24dp" />
+                            <entry key="outputName" value="ic_android" />
                             <entry key="sourceFile" value="C:\Users\Christos" />
                           </map>
                         </option>
