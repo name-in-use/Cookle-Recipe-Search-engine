@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class AdvancedSearch extends AppCompatActivity {
 
-    private CheckBox mmilk, meggs, mmeat;
+    private CheckBox mint, spaghetti, chicken;
     private Button mbutton;
     private ArrayList<String> ingredients;
     private ArrayList<String> database_ingredient;
@@ -65,12 +65,11 @@ public class AdvancedSearch extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Recipes");
 
-        meggs = findViewById(R.id.check_eggs);
-        mmeat = findViewById(R.id.check_meat);
-        mmilk = findViewById(R.id.check_milk);
+        spaghetti = findViewById(R.id.spaghetti);
+        chicken = findViewById(R.id.chicken);
+        mint = findViewById(R.id.mint);
 
         mbutton = findViewById(R.id.button_search);
-        mTextview = findViewById(R.id.result);
         mTextview.setEnabled(false);
 
         goListener();
@@ -88,10 +87,6 @@ public class AdvancedSearch extends AppCompatActivity {
                 intentResults.putStringArrayListExtra("URL",saved_imageURL);
                 intentResults.putStringArrayListExtra("ingredients",saved_recipes_with_ingredients);
                 startActivity(intentResults);
-
-                Log.d("myTag", "1 " + saved_name.toString());
-                Log.d("myTag", "1 " + saved_imageURL.toString());
-                Log.d("myTag", "1 " + saved_recipes_with_ingredients.toString());
 
                 openAdvancedResults();
             }
@@ -126,14 +121,7 @@ public class AdvancedSearch extends AppCompatActivity {
                     //           }
                 }
 
-                /*
-                Log.d("myTag", "1 " + database_ingredient.toString());
-                Log.d("myTag", "1 " + database_name.toString());
-                Log.d("myTag", "1 " + database_total_num.toString());
-                Log.d("myTag", "1 " + database_imageURL.toString());
 
-
-                 */
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -149,14 +137,14 @@ public class AdvancedSearch extends AppCompatActivity {
         saved_recipes_with_ingredients.clear();
         exists.clear();
 
-        if (meggs.isChecked()) {
-            ingredients.add("eggs");
+        if (spaghetti.isChecked()) {
+            ingredients.add("spaghetti");
         }
-        if (mmeat.isChecked()) {
-            ingredients.add("meat");
+        if (chicken.isChecked()) {
+            ingredients.add("chicken");
         }
-        if (mmilk.isChecked()) {
-            ingredients.add("milk");
+        if (mint.isChecked()) {
+            ingredients.add("mint");
         }
 
         for (int z = 0; z < database_ingredient.size(); z++){
