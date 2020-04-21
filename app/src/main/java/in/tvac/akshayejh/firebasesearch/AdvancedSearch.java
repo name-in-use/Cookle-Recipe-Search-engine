@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,8 +21,10 @@ import java.util.ArrayList;
 
 public class AdvancedSearch extends AppCompatActivity {
 
+    private static final String TAG = AdvancedSearch.class.getName();
+
     private CheckBox mint, spaghetti, chicken;
-    private Button mbutton;
+    private ImageButton mbutton;
     private ArrayList<String> ingredients;
     private ArrayList<String> database_ingredient;
     private ArrayList<String> database_name;
@@ -56,9 +59,6 @@ public class AdvancedSearch extends AppCompatActivity {
         exists = new ArrayList<>();
         database_imageURL = new ArrayList<>();
         saved_imageURL = new ArrayList<>();
-
-//test commits
-
         saved_name = new ArrayList<>();
         saved_recipes_with_ingredients = new ArrayList<>();
 
@@ -69,31 +69,29 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
 
-     //   mbutton = findViewById(R.id.button_search);
-        mTextview.setEnabled(false);
 
+        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
+        Log.d(TAG, "onCreate");
         goListener();
 
         mbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "onClick");
                 doLocalQuery();
                 goSort();
-
-                Log.d("myTag", "1 " + saved_name.toString());
-
                 Intent intentResults = new Intent(AdvancedSearch.this, AdvancedResults.class);
                 intentResults.putStringArrayListExtra("names",saved_name);
                 intentResults.putStringArrayListExtra("URL",saved_imageURL);
                 intentResults.putStringArrayListExtra("ingredients",saved_recipes_with_ingredients);
                 startActivity(intentResults);
-
                 openAdvancedResults();
             }
         });
     }
 
     private void goListener() {
+        Log.d(TAG, "goListener");
 
         database_ingredient.clear();
         database_name.clear();
@@ -131,6 +129,7 @@ public class AdvancedSearch extends AppCompatActivity {
     }
 
     private void doLocalQuery() {
+        Log.d(TAG, "doLocalQuery");
 
         ingredients.clear();
         saved_name.clear();
@@ -172,6 +171,8 @@ public class AdvancedSearch extends AppCompatActivity {
     }
 
     public void goSort() {
+        Log.d(TAG, "goSort");
+
         int temp;
         String tempName;
         String tempIngr;
@@ -226,6 +227,7 @@ public class AdvancedSearch extends AppCompatActivity {
     }
 
     public void openAdvancedResults(){
+        Log.d(TAG, "openAdvancedResults");
         Intent intent = new Intent(this, AdvancedResults.class);
         startActivity(intent);
     }
