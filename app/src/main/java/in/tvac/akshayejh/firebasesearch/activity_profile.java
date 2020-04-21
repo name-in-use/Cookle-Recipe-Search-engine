@@ -19,6 +19,9 @@ import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+
+import in.tvac.akshayejh.firebasesearch.InstructionalsFolder.instructionals;
+
 public class activity_profile extends AppCompatActivity {
     ArrayList<String> addArray = new ArrayList<String>();
     ImageView PROFILE_IMG;
@@ -29,7 +32,7 @@ public class activity_profile extends AppCompatActivity {
    static SharedPreferences.Editor editor;
     private static final String PREFS_NAME = "preferenceName";
      Uri imageUri;
-
+//variables
     private EditText namefield;
     private  TextView namelabel;
     private Button UPDATEbtn;

@@ -16,9 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".instructionalResults"></activity>
-        <activity android:name=".instructionals" />
         <activity android:name=".ExampleItem" />
+        <activity android:name=".InstructionalsFolder.instructionalResults" />
+        <activity android:name=".InstructionalsFolder.instructionals" />
         <activity android:name=".AdvancedSearch" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SaveRecipes" />

@@ -1,4 +1,4 @@
-package in.tvac.akshayejh.firebasesearch;
+package in.tvac.akshayejh.firebasesearch.InstructionalsFolder;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -11,7 +11,11 @@ import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class instructionalResults extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+import in.tvac.akshayejh.firebasesearch.R;
+
+public class TomatoResults extends YouTubeBaseActivity implements
+        YouTubePlayer.OnInitializedListener {
+//variables
     private static  String URL_ID;
     public static final String API_KEY = "AIzaSyC6qV7KManQBX8Qu0MSbVICshKg1nj97rg";
     private static String VIDEO_ID;
@@ -19,8 +23,8 @@ public class instructionalResults extends YouTubeBaseActivity implements YouTube
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructionals);
-        URL_ID = getIntent().getStringExtra("onion");
-         VIDEO_ID = URL_ID;
+        URL_ID = getIntent().getStringExtra("tomato");
+        VIDEO_ID = URL_ID;
         /** Initializing YouTube Player View **/
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
         youTubePlayerView.initialize(API_KEY, this);
@@ -61,24 +65,25 @@ public class instructionalResults extends YouTubeBaseActivity implements YouTube
         }
     };
 
-    private PlayerStateChangeListener playerStateChangeListener = new PlayerStateChangeListener() {
-        @Override
-        public void onAdStarted() {
-        }
-        @Override
-        public void onError(ErrorReason arg0) {
-        }
-        @Override
-        public void onLoaded(String arg0) {
-        }
-        @Override
-        public void onLoading() {
-        }
-        @Override
-        public void onVideoEnded() {
-        }
-        @Override
-        public void onVideoStarted() {
-        }
-    };
+    private PlayerStateChangeListener playerStateChangeListener =
+            new PlayerStateChangeListener() {
+                @Override
+                public void onAdStarted() {
+                }
+                @Override
+                public void onError(ErrorReason arg0) {
+                }
+                @Override
+                public void onLoaded(String arg0) {
+                }
+                @Override
+                public void onLoading() {
+                }
+                @Override
+                public void onVideoEnded() {
+                }
+                @Override
+                public void onVideoStarted() {
+                }
+            };
 }
