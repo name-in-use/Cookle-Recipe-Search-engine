@@ -69,7 +69,7 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
 
-        mbutton = findViewById(R.id.button_search);
+     //   mbutton = findViewById(R.id.button_search);
         mTextview.setEnabled(false);
 
         goListener();
