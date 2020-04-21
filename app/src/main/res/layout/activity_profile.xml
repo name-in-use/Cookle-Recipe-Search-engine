@@ -11,14 +11,14 @@
         android:id="@+id/username"
         android:layout_width="241dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="76dp"
         android:layout_marginBottom="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/Update_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rellay1"
-        app:layout_constraintVertical_bias="0.923"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <android.support.constraint.ConstraintLayout
@@ -99,51 +99,52 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/contact_btn"
-        android:layout_width="234dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="188dp"
-        android:onClick="Contact"
-        android:text="Contact us"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rellay1"
-        tools:ignore="MissingConstraints" />
-
-    <Button
         android:id="@+id/Update_btn"
-        android:layout_width="235dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="240dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="52dp"
         android:onClick="UpdateInfo"
         android:text="Update info"
         app:layout_constraintBottom_toTopOf="@+id/SaveRecBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/SaveRecBtn"
-        android:layout_width="237dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="SRecipe"
-        android:text="Recipe history"
-        app:layout_constraintBottom_toTopOf="@+id/contact_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/INS"
         android:layout_width="235dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="12dp"
         android:text="Helpful cooking tutorials"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/contact_btn"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="288dp"
+        android:onClick="Contact"
+        android:text="Contact us"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/SaveRecBtn"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="SRecipe"
+        android:text="Recipe history"
+        app:layout_constraintBottom_toTopOf="@+id/contact_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent" />
 
 
