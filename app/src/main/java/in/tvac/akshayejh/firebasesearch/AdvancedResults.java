@@ -26,8 +26,6 @@ public class AdvancedResults extends AppCompatActivity {
     public static ArrayList<String> RecipeExecutions = new ArrayList<>();
     public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
     private RecyclerView mResultList;
-
-
      */
 
     @Override
@@ -55,7 +53,7 @@ public class AdvancedResults extends AppCompatActivity {
         }
 
  */
-
+/*
         mRecyclerView = findViewById(R.id.recyclerView1);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -63,7 +61,6 @@ public class AdvancedResults extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
         mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -72,6 +69,15 @@ public class AdvancedResults extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+ */
+        mRecyclerView = findViewById(R.id.recyclerView1);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new AdvancedAdapter(advancedList);
+
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
 
    /*
         mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
