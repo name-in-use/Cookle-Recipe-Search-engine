@@ -21,6 +21,7 @@
         <activity android:name=".InstructionalsFolder.instructionals" />
         <activity android:name=".AdvancedSearch" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".AdvancedResults" />
         <activity android:name=".SaveRecipes" />
         <activity android:name=".ResultsView" />
         <activity android:name=".contact" />
