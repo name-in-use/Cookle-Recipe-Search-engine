@@ -848,7 +848,15 @@
                 android:layout_height="1177dp"
                 app:srcCompat="@drawable/ADVSearchbtn" />
 
+
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/button_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search" />
     </ScrollView>
 
     <TextView
