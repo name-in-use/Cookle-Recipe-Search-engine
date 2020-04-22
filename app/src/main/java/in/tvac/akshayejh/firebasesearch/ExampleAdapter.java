@@ -19,7 +19,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         public ExampleViewHolder(View itemView) {
             super(itemView);
             mTextViewLine1 = itemView.findViewById(R.id.textview_line1);
-
         }
     }
 

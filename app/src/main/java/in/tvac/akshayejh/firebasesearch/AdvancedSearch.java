@@ -45,7 +45,7 @@ public class AdvancedSearch extends AppCompatActivity {
 
 
     private TextView mTextview;
-    private AdvancedQuery test;
+    private AdvancedQuery advQuer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,21 +101,21 @@ public class AdvancedSearch extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot recipeSnapshot : snapshot.getChildren()) {
-                    test = recipeSnapshot.getValue(AdvancedQuery.class);
-                    if (test.getIngredients() != null) {
-                        database_ingredient.add(test.getIngredients());
+                    advQuer = recipeSnapshot.getValue(AdvancedQuery.class);
+                    if (advQuer.getIngredients() != null) {
+                        database_ingredient.add(advQuer.getIngredients());
                     }
-                    if (test.getName() != null) {
-                        database_name.add(test.getName());
+                    if (advQuer.getName() != null) {
+                        database_name.add(advQuer.getName());
                     }
-                    if (test.getTotalNum() != null) {
-                        database_total_num.add(Integer.parseInt(test.getTotalNum()));
+                    if (advQuer.getTotalNum() != null) {
+                        database_total_num.add(Integer.parseInt(advQuer.getTotalNum()));
                     }
-                    if (test.getImage() != null) {
-                        database_imageURL.add(test.getImage());
+                    if (advQuer.getImage() != null) {
+                        database_imageURL.add(advQuer.getImage());
                     }
-                    //           if (test.getExecution() != null) {
-                    //               database_imageURL.add(test.getImage());
+                    //           if (advQuer.getExecution() != null) {
+                    //               database_imageURL.add(advQuer.getImage());
                     //           }
                 }
 

@@ -6,7 +6,6 @@ public class ExampleItem {
 
     public ExampleItem(String line1) {
         mLine1 = line1;
-
     }
 
     public String getLine1() {
