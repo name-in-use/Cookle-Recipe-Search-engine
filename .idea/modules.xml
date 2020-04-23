@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CookleFiles.iml" filepath="$PROJECT_DIR$/CookleFiles.iml" group="CookleFiles" />
-      <module fileurl="file://$PROJECT_DIR$/CookleFiles1.iml" filepath="$PROJECT_DIR$/CookleFiles1.iml" group="CookleFiles1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CookleFiles.iml" filepath="$PROJECT_DIR$/.idea/CookleFiles.iml" group="CookleFiles" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CookleFiles/app" />
     </modules>
   </component>
