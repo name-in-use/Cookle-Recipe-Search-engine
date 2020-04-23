@@ -23,8 +23,6 @@ public class Cookle_main extends AppCompatActivity {
         mSearchField = (EditText) findViewById(R.id.search_field);
         mSearchBtn = (ImageButton) findViewById(R.id.search_btn);
         mAdvSearchBtn= (ImageButton) findViewById(R.id.advsearch_btn);
-
-
     }
     public static Cookle_main getActivityInstance()
     {
@@ -64,7 +62,7 @@ public class Cookle_main extends AppCompatActivity {
     //Open profile activity
     public void OpenProfile(View view)
     {
-        Intent intentLoadNewActivity = new Intent(Cookle_main.this,activity_profile.class);
+        Intent intentLoadNewActivity = new Intent(Cookle_main.this, Activity_profile.class);
         startActivity(intentLoadNewActivity);
 
     }

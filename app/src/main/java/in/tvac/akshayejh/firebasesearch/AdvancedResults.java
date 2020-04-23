@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class AdvancedResults extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    //    private RecyclerView.Adapter mAdapter;
     private AdvancedAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -44,33 +43,7 @@ public class AdvancedResults extends AppCompatActivity {
             i++;
 
         }
-/*
-        AdvancedAdapter.OnItemClickListener i1 = new AdvancedAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position, String textData) {
 
-            }
-        }
-
- */
-/*
-        mRecyclerView = findViewById(R.id.recyclerView1);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new AdvancedAdapter(advancedList);
-
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Intent i = new Intent();
-                //             i.putExtra("TEXT_KEY", String textData);
-                startActivity(i);
-            }
-        });
-
- */
         mRecyclerView = findViewById(R.id.recyclerView1);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -79,7 +52,7 @@ public class AdvancedResults extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-   /*
+
         mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, String textData) {
@@ -89,7 +62,6 @@ public class AdvancedResults extends AppCompatActivity {
             }
         });
 
-    */
 
     }
 

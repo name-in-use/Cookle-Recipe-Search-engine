@@ -29,7 +29,6 @@ public class ResultsView extends AppCompatActivity {
         String anyExecution = executions.stream().findAny().orElse(null);
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("images");
 
-
         TextView Tname = findViewById(R.id.RecName);
         TextView Texecution = findViewById(R.id.RecExecution);
         ImageView ImageView1 = findViewById(R.id.imageView2);
@@ -38,7 +37,6 @@ public class ResultsView extends AppCompatActivity {
         if (anyName != null) {
             // call setText
             Tname.setText(anyName);
-
         }
 
         //display execution
@@ -46,8 +44,6 @@ public class ResultsView extends AppCompatActivity {
             // call setText
             Texecution.setText(anyExecution);
         }
-
-
     }
     public String RName()
     {

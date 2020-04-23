@@ -94,54 +94,34 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.list_layout,
                 UsersViewHolder.class,
                 firebaseSearchQuery
-
         ) {
             @Override
             public void populateViewHolder(UsersViewHolder viewHolder, Recipes model, int position) {
-
-
                 viewHolder.setDetails(getApplicationContext(), model.getName(), model.getexecution(), model.getImage());
-
             }
         };
-
         mResultList.setAdapter(firebaseRecyclerAdapter);
-
     }
-
-
     // View Holder Class
-
     public static class UsersViewHolder extends RecyclerView.ViewHolder {
-
         View mView;
-
         public UsersViewHolder(View itemView) {
             super(itemView);
-
             mView = itemView;
-
         }
 
-
         public void setDetails(Context ctx, String RecName, String RecExecution, String RecImage){
-
             TextView Rname = (TextView) mView.findViewById(R.id.name_text);
             //TextView Rexecution = (TextView) mView.findViewById(R.id.execution_text);
             ImageView Rimage = (ImageView) mView.findViewById(R.id.imageButton);
-
             Rname.setText(RecName);
-
             //load image
             Glide.with(ctx).load(RecImage).into(Rimage);
 
             RecipeNames.add(RecName);
             RecipeExecutions.add(RecExecution);
-
             data = RecipeNames.get(0);
-
         }
-
     }
 
        //open results activity

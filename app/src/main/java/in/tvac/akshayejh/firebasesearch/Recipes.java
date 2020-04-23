@@ -7,7 +7,6 @@ public class Recipes {
     public String name, image, execution;
 
     public Recipes(){
-
     }
 
     public String getName() {

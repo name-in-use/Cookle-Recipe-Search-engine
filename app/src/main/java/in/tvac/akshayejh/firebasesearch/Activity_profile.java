@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import in.tvac.akshayejh.firebasesearch.InstructionalsFolder.instructionals;
 
-public class activity_profile extends AppCompatActivity {
+public class Activity_profile extends AppCompatActivity {
     ArrayList<String> addArray = new ArrayList<String>();
     ImageView PROFILE_IMG;
     Button PHOTObutton;
@@ -134,14 +134,14 @@ public class activity_profile extends AppCompatActivity {
     //open contact activity
     public void Contact(View view)
     {
-        Intent intentLoadNewActivity = new Intent(activity_profile.this, contact.class);
+        Intent intentLoadNewActivity = new Intent(Activity_profile.this, Contact.class);
 
         startActivity(intentLoadNewActivity);
     }
     //open recipe history
     public void SRecipe(View view)
     {
-        Intent intentLoadNewActivity = new Intent(activity_profile.this, SaveRecipes.class);
+        Intent intentLoadNewActivity = new Intent(Activity_profile.this, SaveRecipes.class);
         startActivity(intentLoadNewActivity);
     }
 

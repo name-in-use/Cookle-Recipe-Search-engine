@@ -27,8 +27,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SaveRecipes" />
         <activity android:name=".ResultsView" />
-        <activity android:name=".contact" />
-        <activity android:name=".activity_profile" />
+        <activity android:name=".Contact" />
+        <activity android:name=".Activity_profile" />
         <activity android:name=".Cookle_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
