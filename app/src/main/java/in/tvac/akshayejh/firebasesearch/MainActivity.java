@@ -30,12 +30,12 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    static String data;
-    static MainActivity INSTANCE;
+    private static String data;
+    private static MainActivity INSTANCE;
     private RecyclerView mResultList;
     private DatabaseReference mUserDatabase;
     public static ArrayList<String> RecipeNames = new ArrayList<>();
-     public static ArrayList<String> RecipeExecutions = new ArrayList<>();
+    public static ArrayList<String> RecipeExecutions = new ArrayList<>();
     public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
 
     @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
            public void onDataChange(DataSnapshot dataSnapshot) {
                if (dataSnapshot.exists()) {
                    //name exist
-                   firebaseUserSearch(receivedData);
+                   firebaseSearch(receivedData);
                }
                else
                {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     {
         return this.data;
     }
-    public void firebaseUserSearch(String searchText) {
+    public void firebaseSearch(String searchText) {
 
         Query firebaseSearchQuery = mUserDatabase.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
 
