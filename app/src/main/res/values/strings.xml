@@ -82,4 +82,7 @@
     <string name="checkbox">CheckBox</string>
     <string name="cookle">Cookle</string>
     <string name="todo">TODO</string>
+    <string name="invi1">Button</string>
+    <string name="invi2">Button</string>
+    <string name="recname">TextView</string>
 </resources>
