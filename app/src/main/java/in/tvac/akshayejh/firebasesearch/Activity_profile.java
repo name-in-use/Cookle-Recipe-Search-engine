@@ -31,8 +31,7 @@ public class Activity_profile extends AppCompatActivity {
    static SharedPreferences sharedPref;
    static SharedPreferences.Editor editor;
     private static final String PREFS_NAME = "preferenceName";
-     Uri imageUri;
-//variables
+    Uri imageUri;
     private EditText namefield;
     private  TextView namelabel;
     private Button UPDATEbtn;

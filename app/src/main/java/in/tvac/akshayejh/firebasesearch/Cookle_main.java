@@ -11,9 +11,9 @@ public class Cookle_main extends AppCompatActivity {
     private EditText mSearchField;
     private ImageButton mSearchBtn;
     private ImageButton mAdvSearchBtn;
-    static Cookle_main INSTANCE;
-    static  String data;
-    static String searchRecipe;
+    private static Cookle_main INSTANCE;
+    private static  String data;
+    private static String searchRecipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

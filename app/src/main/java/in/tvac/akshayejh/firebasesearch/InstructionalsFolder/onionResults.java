@@ -13,7 +13,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import in.tvac.akshayejh.firebasesearch.R;
 
-public class instructionalResults extends YouTubeBaseActivity implements
+public class onionResults extends YouTubeBaseActivity implements
         YouTubePlayer.OnInitializedListener {
 
     private static  String URL_ID;
