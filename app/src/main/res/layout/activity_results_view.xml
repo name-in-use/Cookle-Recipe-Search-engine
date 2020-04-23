@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
-                    android:text="TextView"
+                    android:text="@string/edittext"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     tools:ignore="MissingConstraints" />
@@ -59,13 +59,14 @@
         android:id="@+id/imageView2"
         android:layout_width="228dp"
         android:layout_height="134dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@tools:sample/avatars[0]"
-        android:contentDescription="TODO" />
+        tools:srcCompat="@tools:sample/avatars[0]" />
 
     <TextView
         android:id="@+id/RecName"

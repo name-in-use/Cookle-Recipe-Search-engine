@@ -85,4 +85,6 @@
     <string name="invi1">Button</string>
     <string name="invi2">Button</string>
     <string name="recname">TextView</string>
+    <string name="todo">TODO</string>
+    <string name="edittext">EditText</string>
 </resources>
