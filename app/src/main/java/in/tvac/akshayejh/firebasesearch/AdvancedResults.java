@@ -52,7 +52,7 @@ public class AdvancedResults extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-
+/*
         mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, String textData) {
@@ -61,6 +61,8 @@ public class AdvancedResults extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+ */
 
 
     }
