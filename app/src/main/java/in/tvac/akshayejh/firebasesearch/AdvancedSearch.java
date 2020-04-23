@@ -150,7 +150,6 @@ public class AdvancedSearch extends AppCompatActivity {
             exists.add("no");
         }
 
-
         for (int i = 0; i < database_ingredient.size(); i++) {
             //    exists.add("no");
             for (int y = 0; y < ingredients.size(); y++) {

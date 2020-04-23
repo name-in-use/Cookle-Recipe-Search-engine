@@ -14,7 +14,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextViewLine1;
-        public TextView mTextViewLine2;
 
         public ExampleViewHolder(View itemView) {
             super(itemView);

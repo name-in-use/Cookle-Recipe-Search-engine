@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -15,17 +18,14 @@ public class AdvancedResults extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private AdvancedAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    public TextView mtxtVName;
+    public String tempName;
+    public String tempExec;
 
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> saved_recipes_with_ingredients = new ArrayList<>();
-    /*
-    public static ArrayList<String> RecipeNames = new ArrayList<>();
-    public static ArrayList<String> RecipeExecutions = new ArrayList<>();
-    public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
-    private RecyclerView mResultList;
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,13 @@ public class AdvancedResults extends AppCompatActivity {
 
         mNames = AdvancedSearch.getSaved_name();
         saved_recipes_with_ingredients = AdvancedSearch.getSaved_recipes_with_ingredients();
-        mImageUrls = AdvancedSearch.getSaved_imageURL();
+//        mImageUrls = AdvancedSearch.getSaved_imageURL();              removing this temporarily
+        mImageUrls.add("test");
 
         ArrayList<AdvancedItem> advancedList = new ArrayList<>();
         for (String object: mNames) {
-            advancedList.add(new AdvancedItem(R.drawable.ic_android, mNames.get(i), saved_recipes_with_ingredients.get(i)));
+            advancedList.add(new AdvancedItem("test", mNames.get(i), saved_recipes_with_ingredients.get(i)));
             i++;
-
         }
 
         mRecyclerView = findViewById(R.id.recyclerView1);
@@ -51,35 +51,23 @@ public class AdvancedResults extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-/*
-        mAdapter.setOnItemClickListener(new AdvancedAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position, String textData) {
-                Intent i = new Intent();
-                i.putExtra("TEXT_KEY", textData);
-                startActivity(i);
-            }
-        });
-
- */
-
-
     }
 
+    public void openActivity_adv_result(View view)
+    {
+        tempName ="";
+        tempExec = "";
+        mtxtVName = (TextView) findViewById(R.id.textViewADV1);
+        Log.d("test", mtxtVName.getText().toString());
+        tempName = mtxtVName.getText().toString();
+        int temp = mNames.indexOf(tempName);
+        tempExec = saved_recipes_with_ingredients.get(temp);
 
-/*
-    private void initImageBitmaps() {
-
-        mNames = AdvancedSearch.getSaved_name();
-        saved_recipes_with_ingredients = AdvancedSearch.getSaved_recipes_with_ingredients();
-        mImageUrls = AdvancedSearch.getSaved_imageURL();
-
-
-        System.out.println(mNames.toString());
-        System.out.println(mImageUrls.toString());
+        Intent intentLoadNewActivity = new Intent(AdvancedResults.this, OpenSelectedAdvanced.class);
+        intentLoadNewActivity.putExtra("recipName",tempName);
+        intentLoadNewActivity.putExtra("recipExec",tempExec);
+        startActivity(intentLoadNewActivity);
     }
- */
 }
 
 

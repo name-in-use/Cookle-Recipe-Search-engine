@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mResultList = (RecyclerView) findViewById(R.id.result_list);
         mResultList.setHasFixedSize(true);
         mResultList.setLayoutManager(new LinearLayoutManager(this));
-       mUserDatabase.orderByChild("name").equalTo(receivedData).addValueEventListener(new ValueEventListener() {
+        mUserDatabase.orderByChild("name").equalTo(receivedData).addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(DataSnapshot dataSnapshot) {
                if (dataSnapshot.exists()) {
