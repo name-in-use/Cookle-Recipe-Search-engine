@@ -68,7 +68,7 @@ private ImageButton onionBTN,tomatoBTN,knifeBTN,poachedeggsBTN;
                 //set the id of the video
                 String poachedeggs= "p633fYhNyqw";
                 //initialise new activity
-                Intent intent = new Intent(getBaseContext(), KnifeSkills.class);
+                Intent intent = new Intent(getBaseContext(), poachedeggs.class);
                 //transfer to new activity the searchRecipe string
                 intent.putExtra("poachedeggs", poachedeggs);
                 //start new activity
