@@ -21,6 +21,7 @@ public class AdvancedResults extends AppCompatActivity {
     public String tempExec;
 
 
+
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> saved_recipes_with_ingredients = new ArrayList<>();
@@ -44,7 +45,7 @@ public class AdvancedResults extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerView1);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new AdvancedAdapter(advancedList);
+        mAdapter = new AdvancedAdapter(advancedList , AdvancedResults.this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);

@@ -11,15 +11,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:id="@+id/adv_layout">
 
-        <!--
-                <ImageView
-                    android:id="@+id/imageViewADV"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:padding="2dp" />
-        -->
+
         <ImageButton
 
             android:id="@+id/imageButtonADV"
@@ -32,7 +27,6 @@
             android:layout_marginTop="5dp"
             android:background="@null"
             android:clickable="true"
-            android:onClick="openActivity_adv_result"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="1dp"
@@ -44,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/imageButtonADV"
             android:text="Line 1"
             android:textColor="@android:color/black"
@@ -57,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewADV1"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="2dp"
             android:layout_toEndOf="@+id/imageButtonADV"
             android:text="Line 2"
             android:textSize="11sp"/>
