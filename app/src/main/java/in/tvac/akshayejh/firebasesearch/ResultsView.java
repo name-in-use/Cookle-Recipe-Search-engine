@@ -31,7 +31,7 @@ public class ResultsView extends AppCompatActivity {
 
         TextView Tname = findViewById(R.id.RecName);
         TextView Texecution = findViewById(R.id.RecExecution);
-        ImageView ImageView1 = findViewById(R.id.imageView2);
+       // ImageView ImageView1 = findViewById(R.id.imageView2);
 
         //display name
         if (anyName != null) {
