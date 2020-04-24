@@ -8,13 +8,15 @@
     tools:context=".ResultsView">
 
     <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="477dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecName">
+        app:layout_constraintTop_toBottomOf="@+id/RecName"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,30 +57,17 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="228dp"
-        android:layout_height="134dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:srcCompat="@tools:sample/avatars[0]" />
-
     <TextView
         android:id="@+id/RecName"
-        android:layout_width="112dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="295dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/recname"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
