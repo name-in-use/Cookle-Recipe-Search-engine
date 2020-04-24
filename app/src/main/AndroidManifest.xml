@@ -23,6 +23,7 @@
         <activity android:name=".InstructionalsFolder.KnifeSkills" />
         <activity android:name=".InstructionalsFolder.TomatoResults" />
         <activity android:name=".AdvancedResults" />
+        <activity android:name=".OpenSelectedAdvanced" />
         <activity android:name=".AdvancedSearch" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SaveRecipes" />
