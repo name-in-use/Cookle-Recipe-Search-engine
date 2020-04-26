@@ -87,4 +87,7 @@
     <string name="recname">TextView</string>
     <string name="todo1">TODO</string>
     <string name="edittext">EditText</string>
+    <string name="exec">TextView</string>
+    <string name="invi4">Button</string>
+    <string name="searchbuttonedit">Search</string>
 </resources>
