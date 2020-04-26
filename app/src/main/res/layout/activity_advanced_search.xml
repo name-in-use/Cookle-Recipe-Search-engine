@@ -851,14 +851,14 @@
 
             <ImageButton
                 android:id="@+id/button_adv_search"
-                android:layout_width="327dp"
+                android:layout_width="376dp"
                 android:layout_height="1177dp"
                 android:background="#003082C7"
+                android:contentDescription="TODO"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/search_field"
-                app:srcCompat="@drawable/advearchbtn"
-                android:contentDescription="TODO" />
+                app:srcCompat="@drawable/advearchbtn" />
 
         </LinearLayout>
 
