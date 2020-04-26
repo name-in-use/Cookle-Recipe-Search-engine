@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class OpenSelectedAdvanced extends AppCompatActivity {
 
     public TextView mTxt;
-    static String anyName;
     private Integer mIndex;
     private String recip_exec;
     private String recip_ingr;
@@ -30,9 +29,9 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         String recipName = bundle.getString("recipName");
-        mNames = bundle.getStringArrayList("names");
-        saved_recipes_ingredients = bundle.getStringArrayList("ingredients");
-        mExecution = bundle.getStringArrayList("execution");
+        mNames = AdvancedSearch.getSaved_name();
+        saved_recipes_ingredients = AdvancedSearch.getSaved_recipes_ingredients();
+        mExecution = AdvancedSearch.getSaved_execution();
 
 
         mIndex = mNames.indexOf(recipName);
