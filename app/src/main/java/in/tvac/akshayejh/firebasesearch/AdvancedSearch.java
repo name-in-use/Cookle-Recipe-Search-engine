@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -23,8 +24,9 @@ public class AdvancedSearch extends AppCompatActivity {
     private static final String TAG = AdvancedSearch.class.getName();
 
     private ImageButton mbutton;
+    private Button mbsearch;
     private CheckBox mint, spaghetti, chicken;
-    private    ArrayList<String> ingredients;
+    private ArrayList<String> ingredients;
     private ArrayList<String> database_imageURL;
     private ArrayList<String> database_name;
     private ArrayList<String> database_ingredient;
@@ -68,18 +70,21 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
 
-        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
+//        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
+        mbsearch = findViewById(R.id.search_button_adv);
         Log.d(TAG, "onCreate");
         goListener();
 
-        mbutton.setOnClickListener(new View.OnClickListener() {
+        mbsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick");
                 doLocalQuery();
                 goSort();
                 Intent intentResults = new Intent(AdvancedSearch.this, AdvancedResults.class);
-/*                intentResults.putStringArrayListExtra("names",saved_name);
+
+/*
+                intentResults.putStringArrayListExtra("names",saved_name);
                 intentResults.putStringArrayListExtra("URL",saved_imageURL);
                 intentResults.putStringArrayListExtra("ingredients",saved_recipes_ingredients);
 
@@ -119,7 +124,6 @@ public class AdvancedSearch extends AppCompatActivity {
                         database_execution.add(advQuer.getExecution());
                     }
                 }
-
 
             }
             @Override
@@ -184,7 +188,7 @@ public class AdvancedSearch extends AppCompatActivity {
 
         for (int i = 0; i < saved_total_num.size(); i++) {
             for (int j = 1; j < (saved_total_num.size() - i); j++) {
-                if (saved_total_num.get(j-1) > saved_total_num.get(j)) {
+                if (saved_total_num.get(j - 1) > saved_total_num.get(j)) {
 
                     temp = saved_total_num.get(j - 1);
                     saved_total_num.set(j - 1, saved_total_num.get(j));
@@ -205,6 +209,7 @@ public class AdvancedSearch extends AppCompatActivity {
                     tempExec = saved_execution.get(j - 1);
                     saved_execution.set(j - 1, saved_execution.get(j));
                     saved_execution.set(j, tempExec);
+
                 }
             }
         }

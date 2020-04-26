@@ -34,7 +34,7 @@ public class ResultsView extends AppCompatActivity {
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("images");
 
         TextView Tname = findViewById(R.id.RecName);
-        TextView Texecution = findViewById(R.id.RecExecution);
+        TextView Texecution = findViewById(R.id.textView5);
        // ImageView ImageView1 = findViewById(R.id.imageView2);
 
         //display name
