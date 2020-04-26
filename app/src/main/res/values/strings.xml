@@ -89,4 +89,5 @@
     <string name="edittext">EditText</string>
     <string name="exec">TextView</string>
     <string name="invi4">Button</string>
+    <string name="searchbuttonedit">Search</string>
 </resources>
