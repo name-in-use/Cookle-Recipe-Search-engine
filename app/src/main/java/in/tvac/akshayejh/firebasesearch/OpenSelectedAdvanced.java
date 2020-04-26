@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -12,7 +13,14 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
 
     public TextView mTxt;
     static String anyName;
+    private Integer mIndex;
+    private String recip_exec;
+    private String recip_ingr;
+
     public ArrayList<String> names;
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mExecution = new ArrayList<>();
+    private ArrayList<String> saved_recipes_ingredients = new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,20 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         String recipName = bundle.getString("recipName");
+        mNames = bundle.getStringArrayList("names");
+        saved_recipes_ingredients = bundle.getStringArrayList("ingredients");
+        mExecution = bundle.getStringArrayList("execution");
+
+
+        mIndex = mNames.indexOf(recipName);
+        recip_exec =  mExecution.get(mIndex);
+        recip_ingr =  saved_recipes_ingredients.get(mIndex);
+
+        Log.d("thiiiiiiiissssssssss", recip_exec);
+        Log.d("thiiiiiiiissssssssss", recip_ingr);
+
+
+
 //        String recipExec = bundle.getString("recipExec");
         mTxt =  findViewById(R.id.textView4);
         mTxt.setText(recipName);

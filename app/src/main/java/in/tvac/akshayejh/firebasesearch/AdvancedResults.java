@@ -24,7 +24,7 @@ public class AdvancedResults extends AppCompatActivity {
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
-    private ArrayList<String> saved_recipes_with_ingredients = new ArrayList<>();
+    private ArrayList<String> saved_recipes_ingredients = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,12 @@ public class AdvancedResults extends AppCompatActivity {
         int i =0;
 
         mNames = AdvancedSearch.getSaved_name();
-        saved_recipes_with_ingredients = AdvancedSearch.getSaved_recipes_with_ingredients();
+        saved_recipes_ingredients = AdvancedSearch.getSaved_recipes_ingredients();
         mImageUrls = AdvancedSearch.getSaved_imageURL();
 
         ArrayList<AdvancedItem> advancedList = new ArrayList<>();
         for (String object: mNames) {
-            advancedList.add(new AdvancedItem(mImageUrls.get(i), mNames.get(i), saved_recipes_with_ingredients.get(i)));
+            advancedList.add(new AdvancedItem(mImageUrls.get(i), mNames.get(i), saved_recipes_ingredients.get(i)));
             i++;
         }
 
@@ -51,21 +51,6 @@ public class AdvancedResults extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    public void openActivity_adv_result(View view)
-    {
-        tempName ="";
-        tempExec = "";
-        mtxtVName = (TextView) findViewById(R.id.textViewADV1);
-        Log.d("test", mtxtVName.getText().toString());
-        tempName = mtxtVName.getText().toString();
-        int temp = mNames.indexOf(tempName);
-        tempExec = saved_recipes_with_ingredients.get(temp);
-
-        Intent intentLoadNewActivity = new Intent(AdvancedResults.this, OpenSelectedAdvanced.class);
-        intentLoadNewActivity.putExtra("recipName",tempName);
-//        intentLoadNewActivity.putExtra("recipExec",tempExec);
-        startActivity(intentLoadNewActivity);
-    }
 }
 
 

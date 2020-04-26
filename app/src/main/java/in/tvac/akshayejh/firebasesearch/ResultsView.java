@@ -6,8 +6,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 
@@ -22,6 +24,9 @@ public class ResultsView extends AppCompatActivity {
 
         ArrayList<String> names = (ArrayList<String>) getIntent().getStringArrayListExtra("names");
         ArrayList<String> executions = (ArrayList<String>) getIntent().getStringArrayListExtra("Executions");
+        ArrayList<String> ingredients = (ArrayList<String>) getIntent().getStringArrayListExtra("ingredients");
+
+        Log.d("test122222222", ingredients.toString());
 
         //get the one string from the arraylists
         anyName = names.stream().findAny().orElse(null);
@@ -29,7 +34,7 @@ public class ResultsView extends AppCompatActivity {
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("images");
 
         TextView Tname = findViewById(R.id.RecName);
-        TextView Texecution = findViewById(R.id.RecIngredients);
+        TextView Texecution = findViewById(R.id.RecExecution);
        // ImageView ImageView1 = findViewById(R.id.imageView2);
 
         //display name

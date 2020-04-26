@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mUserDatabase;
     public static ArrayList<String> RecipeNames = new ArrayList<>();
     public static ArrayList<String> RecipeExecutions = new ArrayList<>();
+    public static ArrayList<String> RecipeIngredients = new ArrayList<>();
+
     public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
 
     @Override
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         ) {
             @Override
             public void populateViewHolder(UsersViewHolder viewHolder, Recipes model, int position) {
-                viewHolder.setDetails(getApplicationContext(), model.getName(), model.getexecution(), model.getImage());
+                viewHolder.setDetails(getApplicationContext(), model.getName(), model.getexecution(), model.getImage(), model.getIngredients());
             }
         };
         mResultList.setAdapter(firebaseRecyclerAdapter);
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             mView = itemView;
         }
 
-        public void setDetails(Context ctx, String RecName, String RecExecution, String RecImage){
+        public void setDetails(Context ctx, String RecName, String RecExecution, String RecImage, String RecIngredients){
             TextView Rname = (TextView) mView.findViewById(R.id.name_text);
             //TextView Rexecution = (TextView) mView.findViewById(R.id.execution_text);
             ImageView Rimage = (ImageView) mView.findViewById(R.id.imageButton);
@@ -120,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
             RecipeNames.add(RecName);
             RecipeExecutions.add(RecExecution);
+            RecipeIngredients.add(RecIngredients);
             data = RecipeNames.get(0);
         }
     }
@@ -132,12 +135,15 @@ public class MainActivity extends AppCompatActivity {
             //load name and execution in the next activity
             intentLoadNewActivity.putExtra("names",RecipeNames);
             intentLoadNewActivity.putExtra("Executions",RecipeExecutions);
+            intentLoadNewActivity.putExtra("ingredients",RecipeIngredients);
 
-            startActivity(intentLoadNewActivity);
+
+           startActivity(intentLoadNewActivity);
             //clear to array gia na mhn stelnei panw apo 1 Recipe to epomeno activity
 
             RecipeNames.clear();
             RecipeExecutions.clear();
+            RecipeIngredients.clear();
         }
 
 }

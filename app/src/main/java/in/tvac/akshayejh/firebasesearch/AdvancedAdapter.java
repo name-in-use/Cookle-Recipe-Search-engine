@@ -3,6 +3,7 @@ package in.tvac.akshayejh.firebasesearch;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,19 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
     public String mImage;
     public String tempName;
 
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mExecution = new ArrayList<>();
+    private ArrayList<String> saved_recipes_ingredients = new ArrayList<>();
+
+
+
     public static class AdvancedViewHolder extends RecyclerView.ViewHolder {
         public ImageButton mImagebtn;
         public TextView mTextView1;
         public TextView mTextView2;
         public RelativeLayout madv_layout;
+
+
 
 
         public AdvancedViewHolder(View itemView) {
@@ -51,6 +60,15 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
 
     @Override
     public void onBindViewHolder(final AdvancedViewHolder holder, final int position) {
+
+        mNames = AdvancedSearch.getSaved_name();
+        saved_recipes_ingredients = AdvancedSearch.getSaved_recipes_ingredients();
+        mExecution = AdvancedSearch.getSaved_execution();
+
+        Log.d("thiiiiiiiissss name", mNames.toString());
+        Log.d("thiiiiiiiissss ingr", saved_recipes_ingredients.toString());
+        Log.d("thiiiiiiiissss exec", mExecution.toString());
+
         final AdvancedItem currentItem = mAdvancedList.get(position);
         holder.mTextView1.setText(currentItem.getText1());
         holder.mTextView2.setText(currentItem.getText2());
@@ -61,6 +79,10 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, OpenSelectedAdvanced.class);
+                intent.putStringArrayListExtra("names",mNames);
+                intent.putStringArrayListExtra("ingredients",saved_recipes_ingredients);
+                intent.putStringArrayListExtra("execution",mExecution);
+
                 intent.putExtra("recipName", holder.mTextView1.getText().toString());
                 context.startActivity(intent);
             }

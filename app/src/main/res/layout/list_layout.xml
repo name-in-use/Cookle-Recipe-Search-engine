@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#3403A9F4">
+    android:background="#2D09A6EC">
 
     <TextView
         android:id="@+id/name_text"
