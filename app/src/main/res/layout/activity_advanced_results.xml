@@ -11,7 +11,7 @@
         android:id="@+id/recyclerView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
+        android:background="#3403A9F4"
         android:padding="4dp"
         android:scrollbars="vertical" />
 </RelativeLayout>

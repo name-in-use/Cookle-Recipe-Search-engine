@@ -4,7 +4,7 @@ package in.tvac.akshayejh.firebasesearch;
 
 public class Recipes {
 
-    public String name, image, execution;
+    public String name, image, execution, ingredients;
 
     public Recipes(){
     }
@@ -28,14 +28,22 @@ public class Recipes {
     public String getexecution() {
         return execution;
     }
-
     public void setexecution(String execution) {
         this.execution = execution;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public Recipes(String name, String image, String execution) {
         this.name = name;
         this.image = image;
         this.execution = execution;
+        this.ingredients = ingredients;
     }
 }

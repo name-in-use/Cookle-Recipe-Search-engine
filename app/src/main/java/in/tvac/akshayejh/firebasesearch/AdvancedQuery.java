@@ -36,7 +36,7 @@ public class AdvancedQuery {
 
     public void setImage(String image) { this.image = image; }
 
-//    public String getExecution() { return execution; }
+    public String getExecution() { return execution; }
 
-//    public void setExecution(String execution) { this.execution = execution; }
+    public void setExecution(String execution) { this.execution = execution; }
 }

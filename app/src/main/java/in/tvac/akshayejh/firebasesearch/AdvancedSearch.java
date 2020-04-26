@@ -22,21 +22,21 @@ public class AdvancedSearch extends AppCompatActivity {
 
     private static final String TAG = AdvancedSearch.class.getName();
 
-    private CheckBox mint, spaghetti, chicken;
     private ImageButton mbutton;
-    private ArrayList<String> ingredients;
-    private ArrayList<String> database_ingredient;
+    private CheckBox mint, spaghetti, chicken;
+    private    ArrayList<String> ingredients;
+    private ArrayList<String> database_imageURL;
     private ArrayList<String> database_name;
+    private ArrayList<String> database_ingredient;
     private ArrayList<Integer> database_total_num;
-    private ArrayList<Integer> database_execution;
-    private static ArrayList<Integer> saved_total_num;
+    private ArrayList<String> database_execution;
 
     private ArrayList<String> exists;
-    private ArrayList<String> database_imageURL;
-    private static ArrayList<String> saved_imageURL; //////////////////
-    private ArrayList<String> saved_execution;
+    private static ArrayList<String> saved_imageURL;
     private static ArrayList<String> saved_name;
-    private static ArrayList<String> saved_recipes_with_ingredients;
+    private static ArrayList<String> saved_recipes_ingredients;
+    private static ArrayList<Integer> saved_total_num;
+    private static ArrayList<String> saved_execution;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
 
@@ -51,13 +51,15 @@ public class AdvancedSearch extends AppCompatActivity {
         ingredients = new ArrayList<>();
         database_ingredient = new ArrayList<>();
         database_name = new ArrayList<>();
-        database_total_num = new ArrayList<>();
-        saved_total_num = new ArrayList<>();
-        exists = new ArrayList<>();
         database_imageURL = new ArrayList<>();
+        database_total_num = new ArrayList<>();
+        database_execution = new ArrayList<>();
+        saved_total_num = new ArrayList<>();
         saved_imageURL = new ArrayList<>();
         saved_name = new ArrayList<>();
-        saved_recipes_with_ingredients = new ArrayList<>();
+        saved_recipes_ingredients = new ArrayList<>();
+        saved_execution = new ArrayList<>();
+        exists = new ArrayList<>();
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Recipes");
@@ -65,7 +67,6 @@ public class AdvancedSearch extends AppCompatActivity {
         spaghetti = findViewById(R.id.spaghetti);
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
-
 
         mbutton = (ImageButton) findViewById(R.id.button_adv_search);
         Log.d(TAG, "onCreate");
@@ -78,13 +79,16 @@ public class AdvancedSearch extends AppCompatActivity {
                 doLocalQuery();
                 goSort();
                 Intent intentResults = new Intent(AdvancedSearch.this, AdvancedResults.class);
-                intentResults.putStringArrayListExtra("names",saved_name);
+/*                intentResults.putStringArrayListExtra("names",saved_name);
                 intentResults.putStringArrayListExtra("URL",saved_imageURL);
-                intentResults.putStringArrayListExtra("ingredients",saved_recipes_with_ingredients);
+                intentResults.putStringArrayListExtra("ingredients",saved_recipes_ingredients);
+
+ */
                 startActivity(intentResults);
                 openAdvancedResults();
             }
         });
+
     }
 
     private void goListener() {
@@ -111,9 +115,9 @@ public class AdvancedSearch extends AppCompatActivity {
                     if (advQuer.getImage() != null) {
                         database_imageURL.add(advQuer.getImage());
                     }
-                    //           if (advQuer.getExecution() != null) {
-                    //               database_imageURL.add(advQuer.getImage());
-                    //           }
+                    if (advQuer.getExecution() != null) {
+                        database_execution.add(advQuer.getExecution());
+                    }
                 }
 
 
@@ -130,7 +134,10 @@ public class AdvancedSearch extends AppCompatActivity {
 
         ingredients.clear();
         saved_name.clear();
-        saved_recipes_with_ingredients.clear();
+        saved_recipes_ingredients.clear();
+        saved_total_num.clear();
+        saved_imageURL.clear();
+        saved_execution.clear();
         exists.clear();
 
         if (spaghetti.isChecked()) {
@@ -152,13 +159,13 @@ public class AdvancedSearch extends AppCompatActivity {
             for (int y = 0; y < ingredients.size(); y++) {
                 if (database_ingredient.get(i).contains(ingredients.get(y))) {
                     if (exists.get(i) == "no"){
-                        saved_recipes_with_ingredients.add(database_ingredient.get(i));
+                        saved_recipes_ingredients.add(database_ingredient.get(i));
                         saved_name.add(database_name.get(i));
                         saved_imageURL.add(database_imageURL.get(i));
                         saved_total_num.add(database_total_num.get(i));
+                        saved_execution.add(database_execution.get(i));
                         exists.set(i, "yes");
-                    }
-                    else if (exists.get(i) == "yes") {
+                    } else if (exists.get(i) == "yes") {
                         saved_total_num.set(i, saved_total_num.get(i) - 1);
                     }
                 }
@@ -173,6 +180,7 @@ public class AdvancedSearch extends AppCompatActivity {
         String tempName;
         String tempIngr;
         String tempImage;
+        String tempExec;
 
         for (int i = 0; i < saved_total_num.size(); i++) {
             for (int j = 1; j < (saved_total_num.size() - i); j++) {
@@ -186,13 +194,17 @@ public class AdvancedSearch extends AppCompatActivity {
                     saved_name.set(j - 1, saved_name.get(j));
                     saved_name.set(j, tempName);
 
-                    tempIngr = saved_recipes_with_ingredients.get(j - 1);
-                    saved_recipes_with_ingredients.set(j - 1, saved_recipes_with_ingredients.get(j));
-                    saved_recipes_with_ingredients.set(j, tempIngr);
+                    tempIngr = saved_recipes_ingredients.get(j - 1);
+                    saved_recipes_ingredients.set(j - 1, saved_recipes_ingredients.get(j));
+                    saved_recipes_ingredients.set(j, tempIngr);
 
                     tempImage = saved_imageURL.get(j - 1);
                     saved_imageURL.set(j - 1, saved_imageURL.get(j));
                     saved_imageURL.set(j, tempImage);
+
+                    tempExec = saved_execution.get(j - 1);
+                    saved_execution.set(j - 1, saved_execution.get(j));
+                    saved_execution.set(j, tempExec);
                 }
             }
         }
@@ -214,12 +226,20 @@ public class AdvancedSearch extends AppCompatActivity {
         AdvancedSearch.saved_name = saved_name;
     }
 
-    public static ArrayList<String> getSaved_recipes_with_ingredients() {
-        return saved_recipes_with_ingredients;
+    public static ArrayList<String> getSaved_recipes_ingredients() {
+        return saved_recipes_ingredients;
     }
 
-    public static void setSaved_recipes_with_ingredients(ArrayList<String> saved_recipes_with_ingredients) {
-        AdvancedSearch.saved_recipes_with_ingredients = saved_recipes_with_ingredients;
+    public static void setSaved_recipes_ingredients(ArrayList<String> saved_recipes_ingredients) {
+        AdvancedSearch.saved_recipes_ingredients = saved_recipes_ingredients;
+    }
+
+    public static ArrayList<String> getSaved_execution() {
+        return saved_execution;
+    }
+
+    public static void setSaved_execution(ArrayList<String> saved_execution) {
+        AdvancedSearch.saved_execution = saved_execution;
     }
 
     public void openAdvancedResults(){
@@ -230,8 +250,5 @@ public class AdvancedSearch extends AppCompatActivity {
         } else {
             Log.d(TAG, "openAdvancedResults, zero results");
         }
-
-
     }
-
 }
