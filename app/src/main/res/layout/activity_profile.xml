@@ -76,6 +76,8 @@
             android:layout_height="43dp"
             android:layout_marginTop="16dp"
             android:text="Select photo"
+            android:background="@drawable/button_bg"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgUser" />
@@ -90,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Name"
+
         android:textColor="#0F0E0F"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/username"
@@ -105,6 +108,7 @@
         android:layout_marginTop="84dp"
         android:onClick="UpdateInfo"
         android:text="Update info"
+        android:background="@drawable/button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rellay1"
@@ -116,6 +120,7 @@
         android:layout_height="55dp"
         android:layout_marginBottom="132dp"
         android:text="Instructional Videos"
+        android:background="@drawable/button_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -128,6 +133,7 @@
         android:layout_marginTop="80dp"
         android:onClick="Contact"
         android:text="Contact us"
+        android:background="@drawable/button_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Update_btn"
@@ -139,6 +145,7 @@
         android:layout_height="54dp"
         android:onClick="SRecipe"
         android:text="Recipe history"
+        android:background="@drawable/button_bg"
         app:layout_constraintBottom_toTopOf="@+id/contact_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
