@@ -1,14 +1,12 @@
 package in.tvac.akshayejh.firebasesearch;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +21,7 @@ public class AdvancedResults extends AppCompatActivity {
     public String tempExec;
 
 
+
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> saved_recipes_with_ingredients = new ArrayList<>();
@@ -35,19 +34,18 @@ public class AdvancedResults extends AppCompatActivity {
 
         mNames = AdvancedSearch.getSaved_name();
         saved_recipes_with_ingredients = AdvancedSearch.getSaved_recipes_with_ingredients();
-//        mImageUrls = AdvancedSearch.getSaved_imageURL();              removing this temporarily
-        mImageUrls.add("test");
+        mImageUrls = AdvancedSearch.getSaved_imageURL();
 
         ArrayList<AdvancedItem> advancedList = new ArrayList<>();
         for (String object: mNames) {
-            advancedList.add(new AdvancedItem("test", mNames.get(i), saved_recipes_with_ingredients.get(i)));
+            advancedList.add(new AdvancedItem(mImageUrls.get(i), mNames.get(i), saved_recipes_with_ingredients.get(i)));
             i++;
         }
 
         mRecyclerView = findViewById(R.id.recyclerView1);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new AdvancedAdapter(advancedList);
+        mAdapter = new AdvancedAdapter(advancedList , AdvancedResults.this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -65,7 +63,7 @@ public class AdvancedResults extends AppCompatActivity {
 
         Intent intentLoadNewActivity = new Intent(AdvancedResults.this, OpenSelectedAdvanced.class);
         intentLoadNewActivity.putExtra("recipName",tempName);
-        intentLoadNewActivity.putExtra("recipExec",tempExec);
+//        intentLoadNewActivity.putExtra("recipExec",tempExec);
         startActivity(intentLoadNewActivity);
     }
 }

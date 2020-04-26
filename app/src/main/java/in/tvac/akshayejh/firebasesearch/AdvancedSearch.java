@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -36,8 +35,6 @@ public class AdvancedSearch extends AppCompatActivity {
     private ArrayList<String> database_imageURL;
     private static ArrayList<String> saved_imageURL; //////////////////
     private ArrayList<String> saved_execution;
-
-
     private static ArrayList<String> saved_name;
     private static ArrayList<String> saved_recipes_with_ingredients;
     private FirebaseDatabase mFirebaseDatabase;
@@ -226,9 +223,15 @@ public class AdvancedSearch extends AppCompatActivity {
     }
 
     public void openAdvancedResults(){
+        if (saved_name == null){
         Log.d(TAG, "openAdvancedResults");
         Intent intent = new Intent(this, AdvancedResults.class);
         startActivity(intent);
+        } else {
+            Log.d(TAG, "openAdvancedResults, zero results");
+        }
+
+
     }
 
 }
