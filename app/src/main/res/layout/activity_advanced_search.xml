@@ -8,9 +8,11 @@
     android:background="#3403A9F4">
 
     <ScrollView
-        android:layout_width="418dp"
-        android:layout_height="566dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="406dp"
+        android:layout_height="390dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -472,7 +474,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/Legumes"
@@ -494,7 +496,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/peas"
@@ -520,7 +522,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/chick_peas"
@@ -562,7 +564,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/hs"
@@ -584,7 +586,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/checkBox13"
@@ -610,7 +612,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/thyme"
@@ -637,7 +639,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/basil"
@@ -664,7 +666,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/paprica"
@@ -690,7 +692,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/curry"
@@ -716,7 +718,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/cinnamon"
@@ -757,7 +759,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/sau"
@@ -779,7 +781,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/tomato_pulp"
@@ -805,7 +807,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <CheckBox
                     android:id="@+id/barbeque_sauce"
@@ -841,13 +843,14 @@
                 android:layout_height="64dp"
                 android:background="?android:attr/listDivider"
                 android:visibility="invisible" />
-<!--
+            <!--
             <ImageView
                 android:id="@+id/button_adv_search"
                 android:layout_width="327dp"
                 android:layout_height="1177dp"
                 app:srcCompat="@drawable/advearchbtn" />
                 -->
+
 
             <ImageButton
                 android:id="@+id/button_adv_search"
@@ -859,6 +862,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/search_field"
                 app:srcCompat="@drawable/advearchbtn" />
+
 
         </LinearLayout>
 
@@ -877,5 +881,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Cookle" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="45dp"
+        android:background="#2196F3"
+        android:text="@string/searchbuttonedit"
+        android:textColor="#FAF5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </android.support.constraint.ConstraintLayout>

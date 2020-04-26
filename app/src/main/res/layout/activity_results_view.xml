@@ -37,7 +37,7 @@
                     android:visibility="invisible" />
 
                 <TextView
-                    android:id="@+id/RecExecution"
+                    android:id="@+id/RecIngredients"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
@@ -54,6 +54,37 @@
                     android:text="@string/invi2"
                     android:visibility="invisible" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/invi3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/exec"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/invi4"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/invi4"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
