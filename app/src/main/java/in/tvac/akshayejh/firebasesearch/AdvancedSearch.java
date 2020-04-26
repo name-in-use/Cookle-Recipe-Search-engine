@@ -23,11 +23,18 @@ public class AdvancedSearch extends AppCompatActivity {
 
     private static final String TAG = AdvancedSearch.class.getName();
 
+
+    private CheckBox mint, spaghetti, chicken;
+    private Button mbutton;
+    private ArrayList<String> ingredients;
+    private ArrayList<String> database_ingredient;
+
     private ImageButton mbutton;
     private Button mbsearch;
     private CheckBox mint, spaghetti, chicken;
     private ArrayList<String> ingredients;
     private ArrayList<String> database_imageURL;
+
     private ArrayList<String> database_name;
     private ArrayList<String> database_ingredient;
     private ArrayList<Integer> database_total_num;
@@ -70,8 +77,12 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
 
-//        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
-        mbsearch = findViewById(R.id.search_button_adv);
+
+
+        mbutton = (Button) findViewById(R.id.searchbuttonedit);
+
+        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
+
         Log.d(TAG, "onCreate");
         goListener();
 
