@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -22,10 +23,17 @@ public class AdvancedSearch extends AppCompatActivity {
 
     private static final String TAG = AdvancedSearch.class.getName();
 
+
+    private CheckBox mint, spaghetti, chicken;
+    private Button mbutton;
+    private ArrayList<String> ingredients;
+    private ArrayList<String> database_ingredient;
+
     private ImageButton mbutton;
     private CheckBox mint, spaghetti, chicken;
     private    ArrayList<String> ingredients;
     private ArrayList<String> database_imageURL;
+
     private ArrayList<String> database_name;
     private ArrayList<String> database_ingredient;
     private ArrayList<Integer> database_total_num;
@@ -68,7 +76,11 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         mint = findViewById(R.id.mint);
 
+
+        mbutton = (Button) findViewById(R.id.searchbuttonedit);
+
         mbutton = (ImageButton) findViewById(R.id.button_adv_search);
+
         Log.d(TAG, "onCreate");
         goListener();
 
