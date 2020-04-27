@@ -40,7 +40,7 @@ public class RecipeHistoryAdapter extends RecyclerView.Adapter<RecipeHistoryAdap
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.d(TAG, "ExampleViewHolder");
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.example_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_item, parent, false);
         ExampleViewHolder evh = new ExampleViewHolder(v);
         return evh;
     }

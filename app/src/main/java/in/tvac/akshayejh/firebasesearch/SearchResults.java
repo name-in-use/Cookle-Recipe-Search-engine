@@ -20,7 +20,7 @@ public class SearchResults extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results_view);
+        setContentView(R.layout.activity_search_results_view);
         Intent intent = getIntent();
         Log.d(TAG, "onCreate");
 

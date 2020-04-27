@@ -25,8 +25,10 @@
         <activity android:name=".AdvancedResults" />
         <activity android:name=".OpenSelectedAdvanced" />
         <activity android:name=".AdvancedSearch" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".FirebaseResults" />
+        <activity android:name=".RecipeObject" />
         <activity android:name=".RecipeHistory" />
+        <activity android:name=".RecipeHistoryAdapter" />
         <activity android:name=".SearchResults" />
         <activity android:name=".Contact" />
         <activity android:name=".Activity_profile" />

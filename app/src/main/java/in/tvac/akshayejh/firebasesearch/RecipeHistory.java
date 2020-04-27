@@ -26,7 +26,7 @@ public class RecipeHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sr);
+        setContentView(R.layout.activity_recipe_history);
         Log.d(TAG, "onCreate");
 
         //get searched string
