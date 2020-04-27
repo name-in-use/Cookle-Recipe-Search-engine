@@ -1,6 +1,7 @@
 package in.tvac.akshayejh.firebasesearch;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 
 
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
+    private static final String TAG = "ExampleAdapter";
+
     private ArrayList<ExampleItem> mExampleList;
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
@@ -27,6 +30,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(TAG, "ExampleViewHolder");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.example_item, parent, false);
         ExampleViewHolder evh = new ExampleViewHolder(v);
         return evh;
@@ -34,8 +38,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder");
         ExampleItem currentItem = mExampleList.get(position);
-
         holder.mTextViewLine1.setText(currentItem.getLine1());
 
     }

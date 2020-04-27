@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ImageView;
 import android.widget.TextView;
-import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 
 public class ResultsView extends AppCompatActivity {
+    private static final String TAG = "ResultsView";
+
     static String anyName;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -21,12 +22,11 @@ public class ResultsView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_view);
         Intent intent = getIntent();
+        Log.d(TAG, "onCreate");
 
         ArrayList<String> names = (ArrayList<String>) getIntent().getStringArrayListExtra("names");
         ArrayList<String> executions = (ArrayList<String>) getIntent().getStringArrayListExtra("Executions");
         ArrayList<String> ingredients = (ArrayList<String>) getIntent().getStringArrayListExtra("ingredients");
-
-        Log.d("test122222222", ingredients.toString());
 
         //get the one string from the arraylists
         anyName = names.stream().findAny().orElse(null);

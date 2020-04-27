@@ -3,40 +3,33 @@ package in.tvac.akshayejh.firebasesearch;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Base64;
+import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
+
     private static String data;
     private static MainActivity INSTANCE;
     private RecyclerView mResultList;
     private DatabaseReference mUserDatabase;
-    public static ArrayList<String> RecipeNames = new ArrayList<>();
-    public static ArrayList<String> RecipeExecutions = new ArrayList<>();
-    public static ArrayList<String> RecipeIngredients = new ArrayList<>();
+    public static ArrayList<String> recipeNames = new ArrayList<>();
+    public static ArrayList<String> recipeExecutions = new ArrayList<>();
+    public static ArrayList<String> recipeIngredients = new ArrayList<>();
 
     public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
 
@@ -45,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         INSTANCE=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "onCreate");
+
         Intent intent = getIntent();
         //create firebase instance
         mUserDatabase = FirebaseDatabase.getInstance().getReference("Recipes");
@@ -88,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         return this.data;
     }
     public void firebaseSearch(String searchText) {
+        Log.d(TAG, "firebaseSearch");
+
 
         Query firebaseSearchQuery = mUserDatabase.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
 
@@ -107,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // View Holder Class
     public static class UsersViewHolder extends RecyclerView.ViewHolder {
+
         View mView;
         public UsersViewHolder(View itemView) {
             super(itemView);
@@ -114,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void setDetails(Context ctx, String RecName, String RecExecution, String RecImage, String RecIngredients){
+            Log.d(TAG, "setDetails");
             TextView Rname = (TextView) mView.findViewById(R.id.name_text);
             //TextView Rexecution = (TextView) mView.findViewById(R.id.execution_text);
             ImageView Rimage = (ImageView) mView.findViewById(R.id.imageButton);
@@ -121,30 +120,31 @@ public class MainActivity extends AppCompatActivity {
             //load image
             Glide.with(ctx).load(RecImage).into(Rimage);
 
-            RecipeNames.add(RecName);
-            RecipeExecutions.add(RecExecution);
-            RecipeIngredients.add(RecIngredients);
-            data = RecipeNames.get(0);
+            recipeNames.add(RecName);
+            recipeExecutions.add(RecExecution);
+            recipeIngredients.add(RecIngredients);
+            data = recipeNames.get(0);
         }
     }
 
        //open results activity
-       public void openActivity2(View view)
+       public void openResultsView(View view)
        {
-            Bundle bundle=null;
+           Log.d(TAG, "openResultsView");
+           Bundle bundle=null;
             Intent intentLoadNewActivity = new Intent(MainActivity.this, ResultsView.class);
             //load name and execution in the next activity
-            intentLoadNewActivity.putExtra("names",RecipeNames);
-            intentLoadNewActivity.putExtra("Executions",RecipeExecutions);
-            intentLoadNewActivity.putExtra("ingredients",RecipeIngredients);
+            intentLoadNewActivity.putExtra("names", recipeNames);
+            intentLoadNewActivity.putExtra("Executions", recipeExecutions);
+            intentLoadNewActivity.putExtra("ingredients", recipeIngredients);
 
 
            startActivity(intentLoadNewActivity);
             //clear to array gia na mhn stelnei panw apo 1 Recipe to epomeno activity
 
-            RecipeNames.clear();
-            RecipeExecutions.clear();
-            RecipeIngredients.clear();
+            recipeNames.clear();
+            recipeExecutions.clear();
+            recipeIngredients.clear();
         }
 
 }

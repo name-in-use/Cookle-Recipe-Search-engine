@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class AdvancedSearch extends AppCompatActivity {
 
-    private static final String TAG = AdvancedSearch.class.getName();
+    private static final String TAG = "AdvancedSearch";
 
 
     private CheckBox mint, spaghetti, chicken;

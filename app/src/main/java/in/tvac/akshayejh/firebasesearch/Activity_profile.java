@@ -24,45 +24,45 @@ import in.tvac.akshayejh.firebasesearch.InstructionalsFolder.instructionals;
 
 public class Activity_profile extends AppCompatActivity {
     ArrayList<String> addArray = new ArrayList<String>();
-    ImageView PROFILE_IMG;
-    Button PHOTObutton;
-    private static final int PICK_IMAGE = 100;
+    ImageView profileIMG;
+    Button photoButton;
+    private static final int pickImage = 100;
     static  Context context;
    static SharedPreferences sharedPref;
    static SharedPreferences.Editor editor;
-    private static final String PREFS_NAME = "preferenceName";
+    private static final String prefs_Name = "preferenceName";
     Uri imageUri;
     private EditText namefield;
     private  TextView namelabel;
     private Button UPDATEbtn;
-    private Button INSTRUCTIONAL;
-    TextView Tname;
+    private Button instructional;
+    TextView tName;
     String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        PROFILE_IMG = (ImageView)findViewById(R.id.profile_image);
-        PHOTObutton = (Button)findViewById(R.id.photo_btn);
+        profileIMG = (ImageView)findViewById(R.id.profile_image);
+        photoButton = (Button)findViewById(R.id.photo_btn);
         namefield = (EditText) findViewById(R.id.username);
         namelabel = (TextView) findViewById(R.id.namelabel);
-        Tname = (TextView) findViewById(R.id.NameLabel);
+        tName = (TextView) findViewById(R.id.NameLabel);
         UPDATEbtn = (Button)findViewById(R.id.Update_btn);
-        INSTRUCTIONAL = (Button)findViewById(R.id.INS);
+        instructional = (Button)findViewById(R.id.INS);
 
        // Get from the SharedPreferences
 
-        sharedPref = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
+        sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
         String USERname = sharedPref.getString("name", null);
 
         //set the saved username
-        Tname.setText(USERname);
+        tName.setText(USERname);
 
         data=Cookle_main.getActivityInstance().getData();
 
         //open gallery-- select profile photo
-        PHOTObutton.setOnClickListener(new View.OnClickListener() {
+        photoButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -70,7 +70,7 @@ public class Activity_profile extends AppCompatActivity {
             }
         });
 
-        INSTRUCTIONAL.setOnClickListener(new View.OnClickListener() {
+        instructional.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), instructionals.class);
@@ -83,19 +83,19 @@ public class Activity_profile extends AppCompatActivity {
 
     private void openGallery() {
         Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, PICK_IMAGE);
+        startActivityForResult(gallery, pickImage);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
+        if (resultCode == RESULT_OK && requestCode == pickImage){
             imageUri = data.getData();
 
            // sharedPref = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
            // editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
            // editor.putString("imageURI", imageUri.toString());
            // editor.commit();
-            PROFILE_IMG.setImageURI(imageUri);
+            profileIMG.setImageURI(imageUri);
 
 
         }
@@ -113,11 +113,11 @@ public class Activity_profile extends AppCompatActivity {
     }
 
     //set name
-    public void UpdateInfo(View view)
+    public void updateInfo(View view)
     {
-    Tname.setText(namefield.getText());
+    tName.setText(namefield.getText());
 
-        sharedPref = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
+        sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
          editor = sharedPref.edit();
         editor.putString("name", (namefield.getText().toString()));
         namefield.setText("");
@@ -132,14 +132,14 @@ public class Activity_profile extends AppCompatActivity {
 
 
     //open contact activity
-    public void Contact(View view)
+    public void contact(View view)
     {
         Intent intentLoadNewActivity = new Intent(Activity_profile.this, Contact.class);
 
         startActivity(intentLoadNewActivity);
     }
     //open recipe history
-    public void SRecipe(View view)
+    public void sRecipe(View view)
     {
         Intent intentLoadNewActivity = new Intent(Activity_profile.this, SaveRecipes.class);
         startActivity(intentLoadNewActivity);

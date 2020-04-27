@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:background="@null"
         android:clickable="true"
-        android:onClick="openActivity2"
+        android:onClick="openResultsView"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="1dp"
