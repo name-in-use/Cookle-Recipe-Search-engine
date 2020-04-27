@@ -32,6 +32,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private static String data;
     private static MainActivity INSTANCE;
+    public static TextView MatchRecipe;
     private RecyclerView mResultList;
     private DatabaseReference mUserDatabase;
     public static ArrayList<String> RecipeNames = new ArrayList<>();
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
+        MatchRecipe=(TextView) findViewById(R.id.MatchesText);
         //create firebase instance
         mUserDatabase = FirebaseDatabase.getInstance().getReference("Recipes");
         //get recipe name from cookle_Main activity
@@ -91,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
         Query firebaseSearchQuery = mUserDatabase.orderByChild("name").startAt(searchText).endAt(searchText + "\uf8ff");
 
+
+
         FirebaseRecyclerAdapter<Recipes, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Recipes, UsersViewHolder>(
 
                 Recipes.class,
@@ -117,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
             TextView Rname = (TextView) mView.findViewById(R.id.name_text);
             //TextView Rexecution = (TextView) mView.findViewById(R.id.execution_text);
             ImageView Rimage = (ImageView) mView.findViewById(R.id.imageButton);
+
             Rname.setText(RecName);
+
             //load image
             Glide.with(ctx).load(RecImage).into(Rimage);
 
