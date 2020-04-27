@@ -18,12 +18,6 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
     private ArrayList<AdvancedItem> mAdvancedList;
     private Context context;
     public String mImage;
-    public String tempName;
-
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mExecution = new ArrayList<>();
-    private ArrayList<String> saved_recipes_ingredients = new ArrayList<>();
-
 
 
     public static class AdvancedViewHolder extends RecyclerView.ViewHolder {
@@ -32,14 +26,11 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
         public TextView mTextView2;
         public RelativeLayout madv_layout;
 
-
-
-
         public AdvancedViewHolder(View itemView) {
             super(itemView);
             mImagebtn = itemView.findViewById(R.id.imageButtonADV);
             mTextView1 = itemView.findViewById(R.id.textViewADV1);
-            mTextView2 = itemView.findViewById(R.id.textViewADV2);
+//            mTextView2 = itemView.findViewById(R.id.textViewADV2);
             madv_layout = itemView.findViewById(R.id.adv_layout);
         }
 
@@ -61,17 +52,10 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
     @Override
     public void onBindViewHolder(final AdvancedViewHolder holder, final int position) {
 
-        mNames = AdvancedSearch.getSaved_name();
-        saved_recipes_ingredients = AdvancedSearch.getSaved_recipes_ingredients();
-        mExecution = AdvancedSearch.getSaved_execution();
-
-        Log.d("thiiiiiiiissss name", mNames.toString());
-        Log.d("thiiiiiiiissss ingr", saved_recipes_ingredients.toString());
-        Log.d("thiiiiiiiissss exec", mExecution.toString());
 
         final AdvancedItem currentItem = mAdvancedList.get(position);
         holder.mTextView1.setText(currentItem.getText1());
-        holder.mTextView2.setText(currentItem.getText2());
+//        holder.mTextView2.setText(currentItem.getText2());
         mImage = currentItem.getImageResource();
         Picasso.get().load(mImage).into(holder.mImagebtn);
 
@@ -79,9 +63,6 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, OpenSelectedAdvanced.class);
-                intent.putStringArrayListExtra("names",mNames);
-                intent.putStringArrayListExtra("ingredients",saved_recipes_ingredients);
-                intent.putStringArrayListExtra("execution",mExecution);
 
                 intent.putExtra("recipName", holder.mTextView1.getText().toString());
                 context.startActivity(intent);
