@@ -103,7 +103,6 @@
         android:layout_marginBottom="4dp"
         android:background="@null"
         android:clickable="false"
-        android:onClick="openActivity2"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="1dp"
