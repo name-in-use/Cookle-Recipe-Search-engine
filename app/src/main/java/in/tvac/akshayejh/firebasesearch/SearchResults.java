@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class ResultsView extends AppCompatActivity {
+public class SearchResults extends AppCompatActivity {
     private static final String TAG = "ResultsView";
 
     static String anyName;

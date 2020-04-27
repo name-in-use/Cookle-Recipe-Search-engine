@@ -141,7 +141,7 @@ public class Activity_profile extends AppCompatActivity {
     //open recipe history
     public void sRecipe(View view)
     {
-        Intent intentLoadNewActivity = new Intent(Activity_profile.this, SaveRecipes.class);
+        Intent intentLoadNewActivity = new Intent(Activity_profile.this, RecipeHistory.class);
         startActivity(intentLoadNewActivity);
     }
 

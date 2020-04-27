@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExampleItem" />
+        <activity android:name=".RecipeItem" />
         <activity android:name=".InstructionalsFolder.instructionals" />
         <activity android:name=".InstructionalsFolder.poachedeggs" />
         <activity android:name=".InstructionalsFolder.onionResults" />
@@ -26,8 +26,8 @@
         <activity android:name=".OpenSelectedAdvanced" />
         <activity android:name=".AdvancedSearch" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SaveRecipes" />
-        <activity android:name=".ResultsView" />
+        <activity android:name=".RecipeHistory" />
+        <activity android:name=".SearchResults" />
         <activity android:name=".Contact" />
         <activity android:name=".Activity_profile" />
         <activity android:name=".Cookle_main">

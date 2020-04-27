@@ -10,10 +10,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
+public class RecipeHistoryAdapter extends RecyclerView.Adapter<RecipeHistoryAdapter.ExampleViewHolder> {
     private static final String TAG = "ExampleAdapter";
 
-    private ArrayList<ExampleItem> mExampleList;
+    private ArrayList<RecipeItem> mExampleList;
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextViewLine1;
@@ -24,12 +24,12 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         }
     }
 
-    public ExampleAdapter(ArrayList<ExampleItem> exampleList) {
+    public RecipeHistoryAdapter(ArrayList<RecipeItem> exampleList) {
 
-        mExampleList = new ArrayList<ExampleItem>();
+        mExampleList = new ArrayList<RecipeItem>();
 
         for (int i = 0; i < exampleList.size(); i++) {
-            ExampleItem item = exampleList.get(i);
+            RecipeItem item = exampleList.get(i);
             if (item.getLine1() != null && !item.getLine1().isEmpty()) {
                 mExampleList.add(item);
             }
@@ -48,7 +48,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder");
-        ExampleItem currentItem = mExampleList.get(position);
+        RecipeItem currentItem = mExampleList.get(position);
         holder.mTextViewLine1.setText(currentItem.getLine1());
 
     }

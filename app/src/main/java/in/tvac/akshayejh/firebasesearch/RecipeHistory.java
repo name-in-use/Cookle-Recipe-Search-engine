@@ -12,14 +12,14 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class SaveRecipes extends AppCompatActivity {
+public class RecipeHistory extends AppCompatActivity {
     private static final String TAG = "SaveRecipes";
 
-    ArrayList<ExampleItem> mExampleList;
+    ArrayList<RecipeItem> mExampleList;
     private RecyclerView mRecyclerView;
-    private ExampleAdapter mAdapter;
+    private RecipeHistoryAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ResultsView RV = new ResultsView();
+    SearchResults RV = new SearchResults();
     Cookle_main CM = new Cookle_main();
     static String getName;
 
@@ -56,7 +56,7 @@ public class SaveRecipes extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("task list", null);
-        Type type = new TypeToken<ArrayList<ExampleItem>>() {}.getType();
+        Type type = new TypeToken<ArrayList<RecipeItem>>() {}.getType();
         mExampleList = gson.fromJson(json, type);
 
         if (mExampleList == null) {
@@ -69,7 +69,7 @@ public class SaveRecipes extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new ExampleAdapter(mExampleList);
+        mAdapter = new RecipeHistoryAdapter(mExampleList);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -84,7 +84,7 @@ public class SaveRecipes extends AppCompatActivity {
 
     private void insertItem(String line1) {
         Log.d(TAG, "insertItem");
-        mExampleList.add(new ExampleItem(line1));
+        mExampleList.add(new RecipeItem(line1));
         mAdapter.notifyItemInserted(mExampleList.size());
     }
 }

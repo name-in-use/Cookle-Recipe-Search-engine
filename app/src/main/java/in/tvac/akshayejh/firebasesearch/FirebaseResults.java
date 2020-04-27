@@ -20,11 +20,11 @@ import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class FirebaseResults extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private static String data;
-    private static MainActivity INSTANCE;
+    private static FirebaseResults INSTANCE;
     public static TextView MatchRecipe;
     private RecyclerView mResultList;
     private DatabaseReference mUserDatabase;
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static MainActivity getActivityInstance()
+    public static FirebaseResults getActivityInstance()
     {
         return INSTANCE;
     }
@@ -92,15 +92,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        FirebaseRecyclerAdapter<Recipes, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Recipes, UsersViewHolder>(
+        FirebaseRecyclerAdapter<RecipeObject, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<RecipeObject, UsersViewHolder>(
 
-                Recipes.class,
+                RecipeObject.class,
                 R.layout.list_layout,
                 UsersViewHolder.class,
                 firebaseSearchQuery
         ) {
             @Override
-            public void populateViewHolder(UsersViewHolder viewHolder, Recipes model, int position) {
+            public void populateViewHolder(UsersViewHolder viewHolder, RecipeObject model, int position) {
                 viewHolder.setDetails(getApplicationContext(), model.getName(), model.getexecution(), model.getImage(), model.getIngredients());
             }
         };
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
        {
            Log.d(TAG, "openResultsView");
            Bundle bundle=null;
-            Intent intentLoadNewActivity = new Intent(MainActivity.this, ResultsView.class);
+            Intent intentLoadNewActivity = new Intent(FirebaseResults.this, SearchResults.class);
             //load name and execution in the next activity
             intentLoadNewActivity.putExtra("names", recipeNames);
             intentLoadNewActivity.putExtra("Executions", recipeExecutions);

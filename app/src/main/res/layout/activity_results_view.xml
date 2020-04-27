@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3403A9F4"
-    tools:context=".ResultsView">
+    tools:context=".SearchResults">
 
     <ScrollView
         android:layout_width="0dp"
