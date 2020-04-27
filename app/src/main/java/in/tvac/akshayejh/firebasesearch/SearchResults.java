@@ -31,11 +31,15 @@ public class SearchResults extends AppCompatActivity {
         //get the one string from the arraylists
         anyName = names.stream().findAny().orElse(null);
         String anyExecution = executions.stream().findAny().orElse(null);
+        String anyIngredients = ingredients.stream().findAny().orElse(null);
+
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("images");
 
         TextView Tname = findViewById(R.id.RecName);
-        TextView Texecution = findViewById(R.id.textView5);
-       // ImageView ImageView1 = findViewById(R.id.imageView2);
+        TextView Texecution = findViewById(R.id.recExecution);
+        TextView Tingredients = findViewById(R.id.recIngredients);
+
+        // ImageView ImageView1 = findViewById(R.id.imageView2);
 
         //display name
         if (anyName != null) {
@@ -47,7 +51,9 @@ public class SearchResults extends AppCompatActivity {
         if (anyExecution != null) {
             // call setText
             Texecution.setText(anyExecution);
+            Tingredients.setText(anyIngredients);
         }
+
     }
     public String RName()
     {

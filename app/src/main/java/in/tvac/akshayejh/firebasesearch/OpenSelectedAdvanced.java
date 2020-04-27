@@ -13,7 +13,10 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
     private static final String TAG = "OpenSelectedAdvanced";
 
 
-    public TextView mTxt;
+    public TextView mRecName;
+    public TextView mRecExec;
+    public TextView mRecIngr;
+
     private Integer mIndex;
     private String recip_exec;
     private String recip_ingr;
@@ -41,8 +44,13 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
         recip_ingr =  saved_recipes_ingredients.get(mIndex);
 
 //        String recipExec = bundle.getString("recipExec");
-        mTxt =  findViewById(R.id.textView4);
-        mTxt.setText(recipName);
+
+        mRecName =  findViewById(R.id.RecNameADV);
+        mRecName.setText(recipName);
+        mRecExec =  findViewById(R.id.recExecutionADV);
+        mRecExec.setText(recip_exec);
+        mRecIngr =  findViewById(R.id.recIngredientsADV);
+        mRecIngr.setText(recip_ingr);
 
     }
 

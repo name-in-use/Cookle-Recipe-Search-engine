@@ -37,7 +37,7 @@
                     android:visibility="invisible" />
 
                 <TextView
-                    android:id="@+id/RecIngredients"
+                    android:id="@+id/recIngredients"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
@@ -68,7 +68,7 @@
                     android:visibility="invisible" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/recExecution"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
