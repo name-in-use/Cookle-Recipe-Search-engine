@@ -22,8 +22,17 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     }
 
     public ExampleAdapter(ArrayList<ExampleItem> exampleList) {
-        mExampleList = exampleList;
+
+        mExampleList = new ArrayList<ExampleItem>();
+
+        for (int i = 0; i < exampleList.size(); i++) {
+            ExampleItem item = exampleList.get(i);
+            if (item.getLine1() != null && !item.getLine1().isEmpty()) {
+                mExampleList.add(item);
+            }
+        }
     }
+
 
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
