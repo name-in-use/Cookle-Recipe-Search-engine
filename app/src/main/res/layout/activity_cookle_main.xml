@@ -13,7 +13,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
-        android:onClick="OpenProfile"
+        android:onClick="openProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_account_circle_black_24dp" />
@@ -57,7 +57,7 @@
 
     <ImageButton
         android:id="@+id/advsearch_btn"
-        android:onClick="ADVsearchBTN"
+        android:onClick="advSearchBTN"
         android:layout_width="157dp"
         android:layout_height="66dp"
         android:layout_marginTop="12dp"

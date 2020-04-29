@@ -2,11 +2,11 @@ package in.tvac.akshayejh.firebasesearch;
 
 
 
-public class Recipes {
+public class RecipeObject {
 
     public String name, image, execution, ingredients;
 
-    public Recipes(){
+    public RecipeObject(){
     }
 
     public String getName() {
@@ -40,7 +40,7 @@ public class Recipes {
         this.ingredients = ingredients;
     }
 
-    public Recipes(String name, String image, String execution) {
+    public RecipeObject(String name, String image, String execution) {
         this.name = name;
         this.image = image;
         this.execution = execution;

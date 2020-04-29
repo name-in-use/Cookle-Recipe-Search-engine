@@ -21,20 +21,14 @@ import java.util.ArrayList;
 
 public class AdvancedSearch extends AppCompatActivity {
 
-    private static final String TAG = AdvancedSearch.class.getName();
+    private static final String TAG = "AdvancedSearch";
 
 
     private CheckBox mint, spaghetti, chicken;
-    private Button mbutton;
-    private ArrayList<String> ingredients;
-    private ArrayList<String> database_ingredient;
 
-    private ImageButton mbutton;
     private Button mbsearch;
-    private CheckBox mint, spaghetti, chicken;
     private ArrayList<String> ingredients;
     private ArrayList<String> database_imageURL;
-
     private ArrayList<String> database_name;
     private ArrayList<String> database_ingredient;
     private ArrayList<Integer> database_total_num;
@@ -49,8 +43,6 @@ public class AdvancedSearch extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
 
-
-    private TextView mTextview;
     private AdvancedQuery advQuer;
 
     @Override
@@ -79,9 +71,8 @@ public class AdvancedSearch extends AppCompatActivity {
 
 
 
-        mbutton = (Button) findViewById(R.id.searchbuttonedit);
+        mbsearch = (Button) findViewById(R.id.search_button_adv);
 
-        mbutton = (ImageButton) findViewById(R.id.button_adv_search);
 
         Log.d(TAG, "onCreate");
         goListener();

@@ -1,10 +1,9 @@
 package in.tvac.akshayejh.firebasesearch;
 
-public class ExampleItem {
+public class RecipeItem {
     private String mLine1;
 
-
-    public ExampleItem(String line1) {
+    public RecipeItem(String line1) {
         mLine1 = line1;
     }
 
