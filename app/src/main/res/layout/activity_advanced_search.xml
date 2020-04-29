@@ -9,14 +9,12 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="406dp"
-        android:layout_height="390dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="413dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Cookle">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -852,9 +850,6 @@
                 -->
 
 
-
-
-
         </LinearLayout>
 
     </ScrollView>
@@ -878,13 +873,11 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="45dp"
         android:background="#2196F3"
         android:text="@string/searchbuttonedit"
         android:textColor="#FAF5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
