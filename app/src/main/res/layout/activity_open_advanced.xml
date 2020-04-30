@@ -8,9 +8,9 @@
     tools:context=".SearchResults">
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="62dp"
+        android:layout_width="411dp"
+        android:layout_height="555dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -88,7 +88,7 @@
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
-        android:textSize="28sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
