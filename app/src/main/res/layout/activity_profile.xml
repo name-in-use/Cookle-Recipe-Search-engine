@@ -96,7 +96,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="371dp"
+        android:layout_marginBottom="311dp"
         android:text="Name"
         android:textColor="#0F0E0F"
         android:textSize="24sp"
