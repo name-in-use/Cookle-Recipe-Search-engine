@@ -60,13 +60,6 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/invi3"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:visibility="invisible" />
-
                 <TextView
                     android:id="@+id/recExecution"
                     android:layout_width="10dp"
@@ -76,13 +69,6 @@
                     android:textAlignment="center"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/invi4"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/invi4"
-                    android:visibility="invisible" />
             </LinearLayout>
 
         </LinearLayout>
