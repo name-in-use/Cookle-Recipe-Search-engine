@@ -22,7 +22,15 @@ public class AdvancedSearch extends AppCompatActivity {
     private static final String TAG = "AdvancedSearch";
 
 
-    private CheckBox mint, spaghetti, chicken;
+    private CheckBox pork, beef, chicken, bacon, calamari, octopus, mussels, shrimps, fish_fillet;
+    private CheckBox lasagna, tagliatelle, rigatoni, spaghetti, farfaline, canelloni, raviolli, tortellini;
+    private CheckBox white_rice, rissoto, wild_rice, barley, yellow_rice;
+    private CheckBox tomato, lettuce, cabbage, carrot, potato, corn, broccoli, beet, pepper;
+    private CheckBox mushrooms, orange, apple, pear, pinapple, lemon;
+    private CheckBox peas, leutils, beans, chick_peas;
+    private CheckBox parsley, spearmint, rosemary, thyme, oregano, mint, basil, anise, black_pepper;
+    private CheckBox paprica, smoked_paprica, cumin, curry, coriander, cayenne_pepper, cinnamon;
+    private CheckBox tomato_pulp, mustard, cream, barbeque_sauce, chicken_sauce, mayonnaise;
 
     private Button mbsearch;
     private ArrayList<String> ingredients;
@@ -63,9 +71,92 @@ public class AdvancedSearch extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Recipes");
 
-        spaghetti = findViewById(R.id.spaghetti);
+        pork = findViewById(R.id.pork);
+        beef = findViewById(R.id.beef);
         chicken = findViewById(R.id.chicken);
+        bacon = findViewById(R.id.bacon);
+        calamari = findViewById(R.id.calamari);
+        octopus = findViewById(R.id.octopus);
+        mussels = findViewById(R.id.mussels);
+
+
+        shrimps = findViewById(R.id.shrimps);
+        fish_fillet = findViewById(R.id.fish_fillet);
+        lasagna = findViewById(R.id.lasagna);
+        tagliatelle = findViewById(R.id.tagliatelle);
+        rigatoni = findViewById(R.id.rigatoni);
+        spaghetti = findViewById(R.id.spaghetti);
+        farfaline = findViewById(R.id.farfaline);
+        canelloni = findViewById(R.id.canelloni);
+
+
+
+
+        raviolli = findViewById(R.id.ravioli);
+        tortellini = findViewById(R.id.tortellini);
+        white_rice = findViewById(R.id.white_rice);
+        rissoto = findViewById(R.id.rissoto);
+        wild_rice = findViewById(R.id.wild_rice);
+        barley = findViewById(R.id.barley);
+        yellow_rice = findViewById(R.id.yellow_rice);
+        tomato = findViewById(R.id.tomato);
+        lettuce = findViewById(R.id.lettuce);
+
+
+
+
+
+        cabbage = findViewById(R.id.cabbage);
+        carrot = findViewById(R.id.carrot);
+        potato = findViewById(R.id.potato);
+        corn = findViewById(R.id.corn);
+        broccoli = findViewById(R.id.broccoli);
+        beet = findViewById(R.id.beet);
+        pepper = findViewById(R.id.pepper);
+        mushrooms = findViewById(R.id.mushrooms);
+        orange = findViewById(R.id.orange);
+        apple = findViewById(R.id.apple);
+        pear = findViewById(R.id.pear);
+        pinapple = findViewById(R.id.pineapple);
+        lemon = findViewById(R.id.lemon);
+
+
+
+        peas = findViewById(R.id.peas);
+        leutils = findViewById(R.id.leutils);
+        beans = findViewById(R.id.beans);
+        chick_peas = findViewById(R.id.chick_peas);
+        parsley = findViewById(R.id.parsley);
+        spearmint = findViewById(R.id.spearmint);
+        rosemary = findViewById(R.id.rosemary);
+        thyme = findViewById(R.id.thyme);
+        oregano = findViewById(R.id.oregano);
         mint = findViewById(R.id.mint);
+        basil = findViewById(R.id.basil);
+
+
+
+
+
+        anise = findViewById(R.id.anise);
+        black_pepper = findViewById(R.id.black_pepper);
+        paprica = findViewById(R.id.paprica);
+        smoked_paprica = findViewById(R.id.smoked_paprica);
+        cumin = findViewById(R.id.cumin);
+        curry = findViewById(R.id.curry);
+        coriander = findViewById(R.id.coriander);
+        cayenne_pepper = findViewById(R.id.cayenne_pepper);
+
+
+
+        cinnamon = findViewById(R.id.cinnamon);
+        tomato_pulp = findViewById(R.id.tomato_pulp);
+        mustard = findViewById(R.id.mustard);
+        cream = findViewById(R.id.cream);
+        barbeque_sauce = findViewById(R.id.barbeque_sauce);
+        chicken_sauce = findViewById(R.id.chicken_sauce);
+        mayonnaise = findViewById(R.id.mayonnaise);
+
 
 
 
@@ -138,14 +229,192 @@ public class AdvancedSearch extends AppCompatActivity {
         saved_execution.clear();
         exists.clear();
 
-        if (spaghetti.isChecked()) {
-            ingredients.add("spaghetti");
+
+        if (pork.isChecked()) {
+            ingredients.add("pork");
+        }
+        if (beef.isChecked()) {
+            ingredients.add("beef");
         }
         if (chicken.isChecked()) {
             ingredients.add("chicken");
         }
+        if (bacon.isChecked()) {
+            ingredients.add("bacon");
+        }
+        if (calamari.isChecked()) {
+            ingredients.add("calamari");
+        }
+        if (octopus.isChecked()) {
+            ingredients.add("octopus");
+        }
+        if (mussels.isChecked()) {
+            ingredients.add("mussels");
+        }
+        if (shrimps.isChecked()) {
+            ingredients.add("shrimps");
+        }
+        if (fish_fillet.isChecked()) {
+            ingredients.add("fish fillet");
+        }
+        if (lasagna.isChecked()) {
+            ingredients.add("lasagna");
+        }
+        if (tagliatelle.isChecked()) {
+            ingredients.add("tagliatelle");
+        }
+        if (rigatoni.isChecked()) {
+            ingredients.add("rigatoni");
+        }
+        if (spaghetti.isChecked()) {
+            ingredients.add("spaghetti");
+        }
+        if (farfaline.isChecked()) {
+            ingredients.add("farfaline");
+        }
+        if (canelloni.isChecked()) {
+            ingredients.add("canelloni");
+        }
+        if (raviolli.isChecked()) {
+            ingredients.add("raviolli");
+        }
+        if (tortellini.isChecked()) {
+            ingredients.add("tortellini");
+        }
+        if (white_rice.isChecked()) {
+            ingredients.add("white rice");
+        }
+        if (rissoto.isChecked()) {
+            ingredients.add("rissoto");
+        }
+        if (wild_rice.isChecked()) {
+            ingredients.add("wild rice");
+        }
+        if (barley.isChecked()) {
+            ingredients.add("barley");
+        }
+        if (yellow_rice.isChecked()) {
+            ingredients.add("yellow rice");
+        }
+        if (tomato.isChecked()) {
+            ingredients.add("tomato");
+        }
+        if (lettuce.isChecked()) {
+            ingredients.add("lettuce");
+        }
+        if (cabbage.isChecked()) {
+            ingredients.add("cabbage");
+        }
+        if (carrot.isChecked()) {
+            ingredients.add("tortellini");
+        }
+        if (corn.isChecked()) {
+            ingredients.add("corn");
+        }
+        if (broccoli.isChecked()) {
+            ingredients.add("broccoli");
+        }
+        if (beet.isChecked()) {
+            ingredients.add("beet");
+        }
+        if (pepper.isChecked()) {
+            ingredients.add("pepper");
+        }
+        if (mushrooms.isChecked()) {
+            ingredients.add("mushrooms");
+        }
+        if (orange.isChecked()) {
+            ingredients.add("orange");
+        }
+        if (apple.isChecked()) {
+            ingredients.add("apple");
+        }
+        if (pear.isChecked()) {
+            ingredients.add("pear");
+        }
+        if (pinapple.isChecked()) {
+            ingredients.add("pinapple");
+        }
+        if (lemon.isChecked()) {
+            ingredients.add("lemon");
+        }
+        if (peas.isChecked()) {
+            ingredients.add("peas");
+        }
+        if (leutils.isChecked()) {
+            ingredients.add("leutils");
+        }
+        if (beans.isChecked()) {
+            ingredients.add("beans");
+        }
+        if (chick_peas.isChecked()) {
+            ingredients.add("chick peas");
+        }
+        if (parsley.isChecked()) {
+            ingredients.add("parsley");
+        }
+        if (spearmint.isChecked()) {
+            ingredients.add("spearmint");
+        }
+        if (rosemary.isChecked()) {
+            ingredients.add("rosemary");
+        }
+        if (thyme.isChecked()) {
+            ingredients.add("thyme");
+        }
+        if (oregano.isChecked()) {
+            ingredients.add("oregano");
+        }
         if (mint.isChecked()) {
             ingredients.add("mint");
+        }
+        if (basil.isChecked()) {
+            ingredients.add("basil");
+        }
+        if (anise.isChecked()) {
+            ingredients.add("anise");
+        }
+        if (black_pepper.isChecked()) {
+            ingredients.add("black pepper");
+        }
+        if (paprica.isChecked()) {
+            ingredients.add("paprica");
+        }
+        if (smoked_paprica.isChecked()) {
+            ingredients.add("smoked paprica");
+        }
+        if (cumin.isChecked()) {
+            ingredients.add("cumin");
+        }
+        if (curry.isChecked()) {
+            ingredients.add("curry");
+        }
+        if (coriander.isChecked()) {
+            ingredients.add("coriander");
+        }
+        if (cayenne_pepper.isChecked()) {
+            ingredients.add("cayenne pepper");
+        }
+        if (cinnamon.isChecked()) {
+            ingredients.add("cinnamon");
+        }
+        if (tomato_pulp.isChecked()) {
+            ingredients.add("tomato pulp");
+        }
+        if (mustard.isChecked()) {
+            ingredients.add("mustard");
+        }
+        if (cream.isChecked()) {
+            ingredients.add("cream");
+        }
+        if (barbeque_sauce.isChecked()) {
+            ingredients.add("barbeque sauce");
+        }
+        if (chicken_sauce.isChecked()) {
+            ingredients.add("chicken sauce");
+        }
+        if (mayonnaise.isChecked()) {
+            ingredients.add("mayonnaise");
         }
 
         for (int z = 0; z < database_ingredient.size(); z++){
@@ -164,6 +433,9 @@ public class AdvancedSearch extends AppCompatActivity {
                         saved_execution.add(database_execution.get(i));
                         exists.set(i, "yes");
                     } else if (exists.get(i) == "yes") {
+                        Log.d("1111111111111111111", exists.toString());
+                        Log.d("1111111111111111111", saved_total_num.toString());
+
                         saved_total_num.set(i, saved_total_num.get(i) - 1);
                     }
                 }
