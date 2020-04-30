@@ -12,14 +12,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class AdvancedResults extends AppCompatActivity {
+    private static final String TAG = "AdvancedResults";
 
     private RecyclerView mRecyclerView;
     private AdvancedAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public TextView mtxtVName;
-    public String tempName;
-    public String tempExec;
-
 
 
     private ArrayList<String> mNames = new ArrayList<>();

@@ -8,8 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -85,12 +83,6 @@ public class AdvancedSearch extends AppCompatActivity {
                 goSort();
                 Intent intentResults = new Intent(AdvancedSearch.this, AdvancedResults.class);
 
-/*
-                intentResults.putStringArrayListExtra("names",saved_name);
-                intentResults.putStringArrayListExtra("URL",saved_imageURL);
-                intentResults.putStringArrayListExtra("ingredients",saved_recipes_ingredients);
-
- */
                 startActivity(intentResults);
                 openAdvancedResults();
             }

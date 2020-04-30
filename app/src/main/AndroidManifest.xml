@@ -31,8 +31,8 @@
         <activity android:name=".RecipeHistoryAdapter" />
         <activity android:name=".SearchResults" />
         <activity android:name=".Contact" />
-        <activity android:name=".Activity_profile" />
-        <activity android:name=".Cookle_main">
+        <activity android:name=".Activityprofile" />
+        <activity android:name=".CookleMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

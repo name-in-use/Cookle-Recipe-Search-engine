@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class Cookle_main extends AppCompatActivity {
+public class CookleMain extends AppCompatActivity {
     private static final String TAG = "Cookle_main";
 
     private EditText mSearchField;
     private ImageButton mSearchBtn;
     private ImageButton mAdvSearchBtn;
-    private static Cookle_main INSTANCE;
+    private static CookleMain INSTANCE;
     private static  String data;
     private static String searchRecipe;
 
@@ -29,7 +29,7 @@ public class Cookle_main extends AppCompatActivity {
         mSearchBtn = (ImageButton) findViewById(R.id.search_btn);
         mAdvSearchBtn= (ImageButton) findViewById(R.id.advsearch_btn);
     }
-    public static Cookle_main getActivityInstance()
+    public static CookleMain getActivityInstance()
     {
         return INSTANCE;
     }
@@ -54,7 +54,7 @@ public class Cookle_main extends AppCompatActivity {
 
         searchRecipe = mSearchField.getText().toString();
         data = searchRecipe;
-        Intent intentLoadNewActivity = new Intent(Cookle_main.this, FirebaseResults.class);
+        Intent intentLoadNewActivity = new Intent(CookleMain.this, FirebaseResults.class);
         intentLoadNewActivity.putExtra("names",searchRecipe);
         startActivity(intentLoadNewActivity);
 
@@ -63,7 +63,7 @@ public class Cookle_main extends AppCompatActivity {
     public void advSearchBTN(View view)
     {
         Log.d(TAG, "ADVsearchBTN");
-        Intent intentLoadNewActivity = new Intent(Cookle_main.this, AdvancedSearch.class);
+        Intent intentLoadNewActivity = new Intent(CookleMain.this, AdvancedSearch.class);
         startActivity(intentLoadNewActivity);
 
     }
@@ -72,7 +72,7 @@ public class Cookle_main extends AppCompatActivity {
     //Open profile activity
     public void openProfile(View view)
     {
-        Intent intentLoadNewActivity = new Intent(Cookle_main.this, Activity_profile.class);
+        Intent intentLoadNewActivity = new Intent(CookleMain.this, Activityprofile.class);
         startActivity(intentLoadNewActivity);
 
     }
