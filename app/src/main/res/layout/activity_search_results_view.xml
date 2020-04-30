@@ -8,6 +8,7 @@
     tools:context=".SearchResults">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="62dp"
@@ -55,6 +56,12 @@
                     android:visibility="invisible" />
             </LinearLayout>
 
+            <View
+                android:id="@+id/divider20"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -76,8 +83,8 @@
 
     <TextView
         android:id="@+id/RecName"
-        android:layout_width="293dp"
-        android:layout_height="100dp"
+        android:layout_width="329dp"
+        android:layout_height="140dp"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
@@ -88,5 +95,16 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="59dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RecName" />
 
 </android.support.constraint.ConstraintLayout>
