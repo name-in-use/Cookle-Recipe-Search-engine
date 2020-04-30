@@ -23,14 +23,12 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
     public static class AdvancedViewHolder extends RecyclerView.ViewHolder {
         public ImageButton mImagebtn;
         public TextView mTextView1;
-        public TextView mTextView2;
         public RelativeLayout madv_layout;
 
         public AdvancedViewHolder(View itemView) {
             super(itemView);
             mImagebtn = itemView.findViewById(R.id.imageButtonADV);
             mTextView1 = itemView.findViewById(R.id.textViewADV1);
-//            mTextView2 = itemView.findViewById(R.id.textViewADV2);
             madv_layout = itemView.findViewById(R.id.adv_layout);
         }
 
@@ -55,7 +53,6 @@ public class AdvancedAdapter extends RecyclerView.Adapter<AdvancedAdapter.Advanc
 
         final AdvancedItem currentItem = mAdvancedList.get(position);
         holder.mTextView1.setText(currentItem.getText1());
-//        holder.mTextView2.setText(currentItem.getText2());
         mImage = currentItem.getImageResource();
         Picasso.get().load(mImage).into(holder.mImagebtn);
 

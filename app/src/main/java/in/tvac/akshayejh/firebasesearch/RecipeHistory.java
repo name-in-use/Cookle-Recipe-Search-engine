@@ -20,7 +20,7 @@ public class RecipeHistory extends AppCompatActivity {
     private RecipeHistoryAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     SearchResults RV = new SearchResults();
-    Cookle_main CM = new Cookle_main();
+    CookleMain CM = new CookleMain();
     static String getName;
 
     @Override

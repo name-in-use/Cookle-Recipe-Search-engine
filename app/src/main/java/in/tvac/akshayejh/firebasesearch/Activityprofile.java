@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import in.tvac.akshayejh.firebasesearch.InstructionalsFolder.instructionals;
 
-public class Activity_profile extends AppCompatActivity {
+public class Activityprofile extends AppCompatActivity {
     ArrayList<String> addArray = new ArrayList<String>();
     ImageView profileIMG;
     Button photoButton;
@@ -59,7 +59,7 @@ public class Activity_profile extends AppCompatActivity {
         //set the saved username
         tName.setText(USERname);
 
-        data=Cookle_main.getActivityInstance().getData();
+        data= CookleMain.getActivityInstance().getData();
 
         //open gallery-- select profile photo
         photoButton.setOnClickListener(new View.OnClickListener() {
@@ -134,14 +134,14 @@ public class Activity_profile extends AppCompatActivity {
     //open contact activity
     public void contact(View view)
     {
-        Intent intentLoadNewActivity = new Intent(Activity_profile.this, Contact.class);
+        Intent intentLoadNewActivity = new Intent(Activityprofile.this, Contact.class);
 
         startActivity(intentLoadNewActivity);
     }
     //open recipe history
     public void sRecipe(View view)
     {
-        Intent intentLoadNewActivity = new Intent(Activity_profile.this, RecipeHistory.class);
+        Intent intentLoadNewActivity = new Intent(Activityprofile.this, RecipeHistory.class);
         startActivity(intentLoadNewActivity);
     }
 
