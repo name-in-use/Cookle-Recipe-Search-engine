@@ -28,6 +28,7 @@
         android:id="@+id/rellay1"
         android:layout_width="410dp"
         android:layout_height="250dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="34dp"
         android:background="@drawable/grad"
