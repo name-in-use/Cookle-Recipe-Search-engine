@@ -78,8 +78,6 @@ public class AdvancedSearch extends AppCompatActivity {
         calamari = findViewById(R.id.calamari);
         octopus = findViewById(R.id.octopus);
         mussels = findViewById(R.id.mussels);
-
-
         shrimps = findViewById(R.id.shrimps);
         fish_fillet = findViewById(R.id.fish_fillet);
         lasagna = findViewById(R.id.lasagna);
@@ -88,10 +86,6 @@ public class AdvancedSearch extends AppCompatActivity {
         spaghetti = findViewById(R.id.spaghetti);
         farfaline = findViewById(R.id.farfaline);
         canelloni = findViewById(R.id.canelloni);
-
-
-
-
         raviolli = findViewById(R.id.ravioli);
         tortellini = findViewById(R.id.tortellini);
         white_rice = findViewById(R.id.white_rice);
@@ -101,11 +95,6 @@ public class AdvancedSearch extends AppCompatActivity {
         yellow_rice = findViewById(R.id.yellow_rice);
         tomato = findViewById(R.id.tomato);
         lettuce = findViewById(R.id.lettuce);
-
-
-
-
-
         cabbage = findViewById(R.id.cabbage);
         carrot = findViewById(R.id.carrot);
         potato = findViewById(R.id.potato);
@@ -119,9 +108,6 @@ public class AdvancedSearch extends AppCompatActivity {
         pear = findViewById(R.id.pear);
         pinapple = findViewById(R.id.pineapple);
         lemon = findViewById(R.id.lemon);
-
-
-
         peas = findViewById(R.id.peas);
         leutils = findViewById(R.id.leutils);
         beans = findViewById(R.id.beans);
@@ -133,11 +119,6 @@ public class AdvancedSearch extends AppCompatActivity {
         oregano = findViewById(R.id.oregano);
         mint = findViewById(R.id.mint);
         basil = findViewById(R.id.basil);
-
-
-
-
-
         anise = findViewById(R.id.anise);
         black_pepper = findViewById(R.id.black_pepper);
         paprica = findViewById(R.id.paprica);
@@ -146,9 +127,6 @@ public class AdvancedSearch extends AppCompatActivity {
         curry = findViewById(R.id.curry);
         coriander = findViewById(R.id.coriander);
         cayenne_pepper = findViewById(R.id.cayenne_pepper);
-
-
-
         cinnamon = findViewById(R.id.cinnamon);
         tomato_pulp = findViewById(R.id.tomato_pulp);
         mustard = findViewById(R.id.mustard);
@@ -157,12 +135,7 @@ public class AdvancedSearch extends AppCompatActivity {
         chicken_sauce = findViewById(R.id.chicken_sauce);
         mayonnaise = findViewById(R.id.mayonnaise);
 
-
-
-
         mbsearch = (Button) findViewById(R.id.search_button_adv);
-
-
         Log.d(TAG, "onCreate");
         goListener();
 
@@ -209,7 +182,6 @@ public class AdvancedSearch extends AppCompatActivity {
                         database_execution.add(advQuer.getExecution());
                     }
                 }
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -420,22 +392,17 @@ public class AdvancedSearch extends AppCompatActivity {
         for (int z = 0; z < database_ingredient.size(); z++){
             exists.add("no");
         }
-
         for (int i = 0; i < database_ingredient.size(); i++) {
-            //    exists.add("no");
             for (int y = 0; y < ingredients.size(); y++) {
                 if (database_ingredient.get(i).contains(ingredients.get(y))) {
                     if (exists.get(i) == "no"){
                         saved_recipes_ingredients.add(database_ingredient.get(i));
                         saved_name.add(database_name.get(i));
                         saved_imageURL.add(database_imageURL.get(i));
-                        saved_total_num.add(database_total_num.get(i));
+                        saved_total_num.add(database_total_num.get(i) + 1);
                         saved_execution.add(database_execution.get(i));
                         exists.set(i, "yes");
-                    } else if (exists.get(i) == "yes") {
-                        Log.d("1111111111111111111", exists.toString());
-                        Log.d("1111111111111111111", saved_total_num.toString());
-
+                    } else if (exists.get(i) == "yes" && ingredients.size() < saved_total_num.size() ) {
                         saved_total_num.set(i, saved_total_num.get(i) - 1);
                     }
                 }
@@ -475,7 +442,6 @@ public class AdvancedSearch extends AppCompatActivity {
                     tempExec = saved_execution.get(j - 1);
                     saved_execution.set(j - 1, saved_execution.get(j));
                     saved_execution.set(j, tempExec);
-
                 }
             }
         }
