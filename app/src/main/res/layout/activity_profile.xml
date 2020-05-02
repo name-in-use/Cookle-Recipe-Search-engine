@@ -27,11 +27,15 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/rellay1"
         android:layout_width="410dp"
-        android:layout_height="267dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="34dp"
         android:background="@drawable/grad"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <RelativeLayout
             android:id="@+id/imgUser"
@@ -78,8 +82,8 @@
             android:layout_width="138dp"
             android:layout_height="43dp"
             android:layout_marginTop="16dp"
-            android:text="Select photo"
             android:background="@drawable/button_bg"
+            android:text="Select photo"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
