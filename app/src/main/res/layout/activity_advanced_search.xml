@@ -47,7 +47,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/pork"
@@ -79,7 +79,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
 
                 <CheckBox
@@ -110,7 +110,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/mussels"
@@ -176,7 +176,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/lasagna"
@@ -206,7 +206,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/spaghetti"
@@ -237,7 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/ravioli"
@@ -267,7 +267,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/rissoto"
@@ -297,7 +297,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/yellow_rice"
@@ -362,7 +362,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/tomato"
@@ -392,7 +392,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/carrot"
@@ -422,7 +422,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/broccoli"
@@ -452,7 +452,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/mushrooms"
@@ -482,7 +482,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/pear"
@@ -526,7 +526,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <TextView
                     android:id="@+id/Legumes"
@@ -549,7 +549,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/peas"
@@ -578,7 +578,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/chick_peas"
@@ -644,7 +644,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/parsley"
@@ -674,7 +674,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/thyme"
@@ -705,7 +705,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/basil"
@@ -736,7 +736,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/paprica"
@@ -766,7 +766,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/curry"
@@ -796,7 +796,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/cinnamon"
@@ -861,7 +861,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp">
+                android:paddingLeft="20dp">
 
                 <CheckBox
                     android:id="@+id/tomato_pulp"
@@ -891,7 +891,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="18dp"
+                android:paddingLeft="20dp"
                 >
 
                 <CheckBox
