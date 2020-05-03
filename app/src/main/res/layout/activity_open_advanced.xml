@@ -42,9 +42,11 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:text="@string/edittext"
-                    android:textAlignment="center"
+                    android:textAlignment="viewStart"
                     android:textSize="16sp"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    android:padding="15dp"
+                    />
 
                 <Button
                     android:id="@+id/button3"
@@ -73,10 +75,11 @@
                     android:layout_weight="1"
                     android:text="@string/exec"
                     android:textAlignment="viewStart"
-                    android:textSize="18sp" />
+                    android:textSize="16sp"
+                    android:padding="15dp"
+                    />
 
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
@@ -88,11 +91,12 @@
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
-        android:textSize="18sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:id="@+id/divider19"

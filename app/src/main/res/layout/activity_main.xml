@@ -6,10 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3403A9F4"
-    tools:context="in.tvac.akshayejh.firebasesearch.MainActivity">
+    tools:context="in.tvac.akshayejh.firebasesearch.FirebaseResults">
 
 
-    <TextView
+
+
+
+<TextView
         android:id="@+id/heading_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +22,7 @@
         android:text="Cookle"
         android:textColor="#2196F3"
         android:textSize="125sp"
+        app:layout_constraintBottom_toTopOf="@+id/MatchesText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,19 +34,23 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></android.support.v7.widget.RecyclerView>
 
     <TextView
         android:id="@+id/MatchesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="16dp"
         android:text="Recipes"
         android:textSize="19sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/result_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading_label" />
 
     <TextView
         android:id="@+id/No_mathces"
