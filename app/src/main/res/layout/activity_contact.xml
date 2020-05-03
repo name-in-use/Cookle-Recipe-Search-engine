@@ -74,7 +74,7 @@
         android:layout_height="211dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="136dp"
-
+        android:gravity="top|left"
         android:background="#95C9E1"
         android:ems="10"
         android:inputType="textPersonName"
