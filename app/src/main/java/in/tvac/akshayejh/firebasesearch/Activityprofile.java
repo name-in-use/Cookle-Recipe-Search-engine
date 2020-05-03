@@ -29,8 +29,10 @@ public class Activityprofile extends AppCompatActivity {
     private static final int pickImage = 100;
     static  Context context;
    static SharedPreferences sharedPref;
+    static SharedPreferences sharedPref2;
    static SharedPreferences.Editor editor;
     private static final String prefs_Name = "preferenceName";
+    private static final String prefs_Name2 = "preferenceName";
     Uri imageUri;
     private EditText namefield;
     private  TextView namelabel;
@@ -52,10 +54,13 @@ public class Activityprofile extends AppCompatActivity {
         instructional = (Button)findViewById(R.id.INS);
 
        // Get from the SharedPreferences
-
+        sharedPref2 = getApplicationContext().getSharedPreferences(prefs_Name2, 0);
         sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
         String USERname = sharedPref.getString("name", null);
 
+        String imageUriString = sharedPref2.getString("imageURI", "");
+        Uri imageUrii = Uri.parse(imageUriString);
+        profileIMG.setImageURI(imageUrii);
         //set the saved username
         tName.setText(USERname);
 
@@ -91,10 +96,10 @@ public class Activityprofile extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == pickImage){
             imageUri = data.getData();
 
-           // sharedPref = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
-           // editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-           // editor.putString("imageURI", imageUri.toString());
-           // editor.commit();
+            sharedPref2 = getApplicationContext().getSharedPreferences(prefs_Name2, 0);
+            editor = getSharedPreferences(prefs_Name2, MODE_PRIVATE).edit();
+            editor.putString("imageURI", imageUri.toString());
+            editor.commit();
             profileIMG.setImageURI(imageUri);
 
 
