@@ -10,9 +10,10 @@
     <ImageButton
         android:id="@+id/profile_btn"
         android:layout_width="52dp"
-        android:layout_height="40dp"
+        android:layout_height="51dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
+        android:background="@null"
         android:onClick="openProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
