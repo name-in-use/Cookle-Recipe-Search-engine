@@ -1,10 +1,17 @@
 package in.tvac.akshayejh.firebasesearch;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -19,6 +26,7 @@ import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import in.tvac.akshayejh.firebasesearch.InstructionalsFolder.instructionals;
 
@@ -26,13 +34,12 @@ public class Activityprofile extends AppCompatActivity {
     ArrayList<String> addArray = new ArrayList<String>();
     ImageView profileIMG;
     Button photoButton;
+    public static final int KITKAT_VALUE = 1002;
     private static final int pickImage = 100;
     static  Context context;
    static SharedPreferences sharedPref;
-    static SharedPreferences sharedPref2;
    static SharedPreferences.Editor editor;
     private static final String prefs_Name = "preferenceName";
-    private static final String prefs_Name2 = "preferenceName";
     Uri imageUri;
     private EditText namefield;
     private  TextView namelabel;
@@ -54,13 +61,20 @@ public class Activityprofile extends AppCompatActivity {
         instructional = (Button)findViewById(R.id.INS);
 
        // Get from the SharedPreferences
-        sharedPref2 = getApplicationContext().getSharedPreferences(prefs_Name2, 0);
+
         sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
         String USERname = sharedPref.getString("name", null);
 
-        String imageUriString = sharedPref2.getString("imageURI", "");
-        Uri imageUrii = Uri.parse(imageUriString);
-        profileIMG.setImageURI(imageUrii);
+        String imageUriString = sharedPref.getString("imageURI", "");
+
+
+        Uri imageUri = Uri.parse(imageUriString);
+
+
+
+
+        // context.grantUriPermission("in.tvac.akshayejh.firebasesearch", imageUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        profileIMG.setImageURI(imageUri);
         //set the saved username
         tName.setText(USERname);
 
@@ -86,26 +100,57 @@ public class Activityprofile extends AppCompatActivity {
 
     }
 
+
+
     private void openGallery() {
-        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, pickImage);
+
+       // Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        //startActivityForResult(gallery, pickImage);
+        Intent intent;
+
+        if (Build.VERSION.SDK_INT < 19) {
+            intent = new Intent();
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            startActivityForResult(intent, KITKAT_VALUE);
+        } else {
+            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("*/*");
+            startActivityForResult(intent, KITKAT_VALUE);
+        }
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+
+   // @Override
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == pickImage){
             imageUri = data.getData();
 
-            sharedPref2 = getApplicationContext().getSharedPreferences(prefs_Name2, 0);
-            editor = getSharedPreferences(prefs_Name2, MODE_PRIVATE).edit();
+            sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
+            editor = getSharedPreferences(prefs_Name, MODE_PRIVATE).edit();
             editor.putString("imageURI", imageUri.toString());
             editor.commit();
             profileIMG.setImageURI(imageUri);
 
 
         }
-    }
+    }*/
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == KITKAT_VALUE ) {
+            if (resultCode == Activity.RESULT_OK) {
+                imageUri = data.getData();
+
+                sharedPref = getApplicationContext().getSharedPreferences(prefs_Name, 0);
+                editor = getSharedPreferences(prefs_Name, MODE_PRIVATE).edit();
+                editor.putString("imageURI", imageUri.toString());
+                editor.commit();
+                profileIMG.setImageURI(imageUri);
+            }
+        }
+    }
     public static String encodeTobase64(Bitmap image) {
         Bitmap immage = image;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
