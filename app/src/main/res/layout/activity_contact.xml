@@ -78,7 +78,7 @@
         android:background="#95C9E1"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:textAlignment="viewStart"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
