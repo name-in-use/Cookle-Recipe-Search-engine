@@ -42,12 +42,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
+                    android:padding="15dp"
                     android:text="@string/edittext"
                     android:textAlignment="viewStart"
                     android:textSize="16sp"
-                    tools:ignore="MissingConstraints"
-                    android:padding="15dp"
-                    />
+                    tools:ignore="MissingConstraints" />
 
                 <Button
                     android:id="@+id/button3"
@@ -74,11 +73,10 @@
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="15dp"
                     android:text="@string/exec"
                     android:textAlignment="viewStart"
-                    android:textSize="16sp"
-                    android:padding="15dp"
-                    />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -86,37 +84,31 @@
 
     <TextView
         android:id="@+id/RecName"
-        android:layout_width="329dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="243dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="528dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toStartOf="@+id/mImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/mImage"
-        android:layout_width="438dp"
-        android:layout_height="735dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="204dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/divider2"
