@@ -479,6 +479,7 @@ public class AdvancedSearch extends AppCompatActivity {
         AdvancedSearch.saved_execution = saved_execution;
     }
 
+
     public void openAdvancedResults(){
         if (saved_name == null){
         Log.d(TAG, "openAdvancedResults");

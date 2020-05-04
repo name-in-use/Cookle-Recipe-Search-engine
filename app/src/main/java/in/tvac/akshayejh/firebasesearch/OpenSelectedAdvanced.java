@@ -20,11 +20,14 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
     private Integer mIndex;
     private String recip_exec;
     private String recip_ingr;
+    private String imageURL;
 
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mExecution = new ArrayList<>();
     private ArrayList<String> saved_recipes_ingredients = new ArrayList<>();
+    private ArrayList<String> imageURLList = new ArrayList<>();
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +39,17 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
         String recipName = bundle.getString("recipName");
         mNames = AdvancedSearch.getSaved_name();
         saved_recipes_ingredients = AdvancedSearch.getSaved_recipes_ingredients();
+        imageURLList = AdvancedSearch.getSaved_imageURL();
         mExecution = AdvancedSearch.getSaved_execution();
+
 
 
         mIndex = mNames.indexOf(recipName);
         recip_exec =  mExecution.get(mIndex);
         recip_ingr =  saved_recipes_ingredients.get(mIndex);
+        imageURL = imageURLList.get(mIndex);
 
-//        String recipExec = bundle.getString("recipExec");
+
 
         mRecName =  findViewById(R.id.RecNameADV);
         mRecName.setText(recipName);
