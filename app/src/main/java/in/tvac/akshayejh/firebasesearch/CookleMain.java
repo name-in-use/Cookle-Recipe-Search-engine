@@ -54,7 +54,7 @@ public class CookleMain extends AppCompatActivity {
 
         searchRecipe = mSearchField.getText().toString();
         data = searchRecipe;
-        if(searchRecipe!="") {
+        if(searchRecipe!=null) {
             Intent intentLoadNewActivity = new Intent(CookleMain.this, FirebaseResults.class);
             intentLoadNewActivity.putExtra("names", searchRecipe);
             startActivity(intentLoadNewActivity);

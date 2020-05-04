@@ -96,10 +96,27 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/mImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:gravity="center"
+        android:text="@string/recname"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/divider2"

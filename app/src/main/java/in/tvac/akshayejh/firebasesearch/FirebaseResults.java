@@ -32,6 +32,11 @@ public class FirebaseResults extends AppCompatActivity {
     public static ArrayList<String> recipeExecutions = new ArrayList<>();
     public static ArrayList<String> recipeIngredients = new ArrayList<>();
 
+    public static ArrayList<String> image = new ArrayList<>();
+    public static ArrayList<String> name = new ArrayList<>();
+
+
+
     public static ArrayList<Bitmap> RecipeImages = new ArrayList<Bitmap>();
 
     @Override
@@ -122,6 +127,8 @@ public class FirebaseResults extends AppCompatActivity {
             ImageView Rimage = (ImageView) mView.findViewById(R.id.imageButton);
 
             Rname.setText(RecName);
+            image.add(RecImage);
+            name.add(RecName);
 
             //load image
             Glide.with(ctx).load(RecImage).into(Rimage);
@@ -143,6 +150,8 @@ public class FirebaseResults extends AppCompatActivity {
             intentLoadNewActivity.putExtra("names", recipeNames);
             intentLoadNewActivity.putExtra("Executions", recipeExecutions);
             intentLoadNewActivity.putExtra("ingredients", recipeIngredients);
+            intentLoadNewActivity.putStringArrayListExtra("imageList", image);
+            intentLoadNewActivity.putStringArrayListExtra("nameList", name);
 
 
            startActivity(intentLoadNewActivity);
