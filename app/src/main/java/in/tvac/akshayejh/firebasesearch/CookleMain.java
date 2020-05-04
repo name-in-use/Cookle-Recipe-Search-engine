@@ -47,16 +47,18 @@ public class CookleMain extends AppCompatActivity {
         searchRecipe = "";
     }
 
-  //recipe search--Starts Main Activity
+  //recipe search--Starts search
     public void searchBTN(View view)
     {
         Log.d(TAG, "searchBTN");
 
         searchRecipe = mSearchField.getText().toString();
         data = searchRecipe;
-        Intent intentLoadNewActivity = new Intent(CookleMain.this, FirebaseResults.class);
-        intentLoadNewActivity.putExtra("names",searchRecipe);
-        startActivity(intentLoadNewActivity);
+        if(searchRecipe!="") {
+            Intent intentLoadNewActivity = new Intent(CookleMain.this, FirebaseResults.class);
+            intentLoadNewActivity.putExtra("names", searchRecipe);
+            startActivity(intentLoadNewActivity);
+        }
 
     }
 
