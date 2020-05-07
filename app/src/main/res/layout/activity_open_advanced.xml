@@ -9,15 +9,14 @@
 
     <ScrollView
         android:id="@+id/scrollViewADV"
-        android:layout_width="409dp"
-        android:layout_height="521dp"
+        android:layout_width="406dp"
+        android:layout_height="594dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RecNameADV"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.013">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,8 +90,8 @@
 
     <TextView
         android:id="@+id/RecNameADV"
-        android:layout_width="257dp"
-        android:layout_height="78dp"
+        android:layout_width="255dp"
+        android:layout_height="98dp"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
@@ -110,9 +109,10 @@
         android:id="@+id/mImageADV"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
@@ -120,7 +120,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/RecNameADV"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.014" />
 
 </android.support.constraint.ConstraintLayout>
