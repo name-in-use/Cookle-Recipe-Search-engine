@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,8 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
     public TextView mRecName;
     public TextView mRecExec;
     public TextView mRecIngr;
+    public ImageView mRecImg;
+
 
     private Integer mIndex;
     private String recip_exec;
@@ -50,7 +55,8 @@ public class OpenSelectedAdvanced extends AppCompatActivity {
         imageURL = imageURLList.get(mIndex);
 
 
-
+        mRecImg = findViewById(R.id.mImageADV);
+        Picasso.get().load(imageURL).into(mRecImg);
         mRecName =  findViewById(R.id.RecNameADV);
         mRecName.setText(recipName);
         mRecExec =  findViewById(R.id.recExecutionADV);

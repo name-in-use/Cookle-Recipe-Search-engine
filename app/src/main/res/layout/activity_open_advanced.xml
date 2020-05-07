@@ -8,9 +8,10 @@
     tools:context=".SearchResults">
 
     <ScrollView
-        android:layout_width="411dp"
-        android:layout_height="555dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/scrollViewADV"
+        android:layout_width="409dp"
+        android:layout_height="521dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,13 +24,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="25dp"
+                android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/button2ADV"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -41,15 +49,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
+                    android:padding="15dp"
                     android:text="@string/edittext"
                     android:textAlignment="viewStart"
                     android:textSize="16sp"
-                    tools:ignore="MissingConstraints"
-                    android:padding="15dp"
-                    />
+                    tools:ignore="MissingConstraints" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/button3ADV"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -58,7 +65,7 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/divider21"
+                android:id="@+id/divider20ADV"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black" />
@@ -73,11 +80,10 @@
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="15dp"
                     android:text="@string/exec"
                     android:textAlignment="viewStart"
-                    android:textSize="16sp"
-                    android:padding="15dp"
-                    />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -85,26 +91,36 @@
 
     <TextView
         android:id="@+id/RecNameADV"
-        android:layout_width="340dp"
-        android:layout_height="128dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="257dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/nunito_semibold"
         android:gravity="center"
         android:text="@string/recname"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mImage"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
 
-    <View
-        android:id="@+id/divider19"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
+    <ImageView
+        android:id="@+id/mImageADV"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:gravity="center"
+        android:text="@string/recname"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecNameADV" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
