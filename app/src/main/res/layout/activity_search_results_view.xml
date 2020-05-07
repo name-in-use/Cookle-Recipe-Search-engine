@@ -9,8 +9,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="409dp"
-        android:layout_height="521dp"
+        android:layout_width="411dp"
+        android:layout_height="593dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +41,8 @@
                     android:id="@+id/recIngredients"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
                     android:inputType="textMultiLine"
                     android:padding="15dp"
                     android:text="@string/edittext"
@@ -72,6 +74,8 @@
                     android:id="@+id/recExecution"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:padding="15dp"
                     android:text="@string/exec"
@@ -93,10 +97,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mImage"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageView
         android:id="@+id/mImage"
