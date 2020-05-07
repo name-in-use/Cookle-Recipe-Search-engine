@@ -25,7 +25,6 @@ public class FirebaseResults extends AppCompatActivity {
 
     private static String data;
     private static FirebaseResults INSTANCE;
-    public static TextView MatchRecipe;
     private RecyclerView mResultList;
     private DatabaseReference mUserDatabase;
     public static ArrayList<String> recipeNames = new ArrayList<>();
@@ -47,7 +46,6 @@ public class FirebaseResults extends AppCompatActivity {
         Log.d(TAG, "onCreate");
 
         Intent intent = getIntent();
-        MatchRecipe=(TextView) findViewById(R.id.MatchesText);
         //create firebase instance
         mUserDatabase = FirebaseDatabase.getInstance().getReference("Recipes");
         //get recipe name from cookle_Main activity
