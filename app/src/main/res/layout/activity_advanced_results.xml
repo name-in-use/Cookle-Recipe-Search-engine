@@ -11,18 +11,18 @@
 
     <TextView
         android:id="@+id/heading_label"
-        android:layout_width="wrap_content"
+        android:layout_width="346dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="63dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="61dp"
-        android:layout_marginEnd="63dp"
+        android:layout_marginEnd="10dp"
         android:fontFamily="cursive"
         android:text="Cookle"
         android:textColor="#2196F3"
-        android:textSize="125sp"
+        android:textSize="120sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
